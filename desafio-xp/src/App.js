@@ -1,8 +1,9 @@
 import React from 'react';
+import Routes from './helpers/routes';
 
 function App() {
   return (
-    <h1>Caio teste</h1>
+    <Routes />
   );
 }
 
