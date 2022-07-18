@@ -9,6 +9,9 @@ class Routes extends Component {
       <Switch>
         <Route exact path="/" component={ Login } />
         <Route path="/wallet" component={ Wallet } />
+        <Route path="/negociation" component={ } />
+        <Route path="/balance" component={ } />
+        <Route path="/*" component= {  } />
       </Switch>
     );
   }
