@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import saveEmailLocalStorage from '../helpers/LocalStorage';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
@@ -15,6 +16,11 @@ const LoginComponent = () => {
     return true;
   };
   // refatorar.
+
+  const onSubmitLogin = () => {
+    // salvar no localstorage e mudar de rota
+    saveEmailLocalStorage(email);
+  };
 
   return (
     <div>
@@ -33,6 +39,7 @@ const LoginComponent = () => {
       <button
         type="button"
         disabled={ handleDisableButton() }
+        onClick={ () => onSubmitLogin() }
       >
         Acessar
 
