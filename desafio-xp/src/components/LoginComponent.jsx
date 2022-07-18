@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const LoginComponent = () => (
-  <div>
-    <input type="email" placeholder="e-mail" />
-    <input type="password" placeholder="password" />
-    <button type="button">Acessar</button>
-  </div>
-);
+const LoginComponent = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleDisableButton = () => {
+    const MIN_CHARACTERS = 6;
+    const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
+    const validEmail = emailRegex.test(email);
+
+    if (password.length > MIN_CHARACTERS && validEmail) {
+      return false;
+    }
+    return true;
+  };
+  // refatorar.
+
+  return (
+    <div>
+      <input
+        type="email"
+        placeholder="Email:"
+        onChange={ ({ target }) => setEmail(target.value) }
+        value={ email }
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={ ({ target }) => setPassword(target.value) }
+        value={ password }
+      />
+      <button
+        type="button"
+        disabled={ handleDisableButton() }
+      >
+        Acessar
+
+      </button>
+    </div>
+  );
+};
 
 export default LoginComponent;
