@@ -11,13 +11,9 @@ const LoginComponent = () => {
     const MIN_CHARACTERS = 6;
     const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
     const validEmail = emailRegex.test(email);
-
-    if (password.length > MIN_CHARACTERS && validEmail) {
-      return false;
-    }
-    return true;
+    // console.log(validEmail);
+    return !(password.length > MIN_CHARACTERS && validEmail);
   };
-  // todo: refatorar.
 
   const onSubmitLogin = () => {
     // salvar no localstorage e mudar de rota
