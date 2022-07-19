@@ -8,16 +8,16 @@ const BalanceComponent = () => {
   const { balance, setBalance } = useContext(BalanceContext);
   // const [money, setMoney] = useState(balance);
   const [deposito, setDeposito] = useState('');
-  const [hide, setHide] = useState(false);
+  const [hide, setHide] = useState(true);
   // console.log(balance);
   // console.log(deposito);
 
-  const Deposito = () => {
+  const depositar = () => {
     setBalance(Number(balance) + Number(deposito));
     setDeposito('');
   };
 
-  const Saque = () => {
+  const sacar = () => {
     if (deposito > balance) {
       global.alert('Você não tem saldo suficiente para este saque.');
       setDeposito('');
@@ -50,14 +50,14 @@ const BalanceComponent = () => {
         />
         <button
           type="button"
-          onClick={ () => Deposito() }
+          onClick={ () => depositar() }
         >
           Depositar
 
         </button>
         <button
           type="button"
-          onClick={ () => Saque() }
+          onClick={ () => sacar() }
         >
           Sacar
 
