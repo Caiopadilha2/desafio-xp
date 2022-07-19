@@ -8,6 +8,7 @@ const BalanceComponent = () => {
   const { balance, setBalance } = useContext(BalanceContext);
   // const [money, setMoney] = useState(balance);
   const [deposito, setDeposito] = useState('');
+  const [hide, setHide] = useState(false);
   // console.log(balance);
   // console.log(deposito);
 
@@ -30,7 +31,15 @@ const BalanceComponent = () => {
     <div>
       <HeaderComponent />
       <section>
-        <p>{`Saldo em conta: R$${Number(balance)}`}</p>
+        <div>
+          <button
+            type="button"
+            onClick={ () => setHide(!hide) }
+          >
+            { hide ? 'Esconder saldo' : 'Mostrar saldo'}
+          </button>
+          {hide && <p>{`Saldo em conta: R$${Number(balance)}`}</p>}
+        </div>
 
         <input
           placeholder="Informe o valor"
