@@ -13,6 +13,7 @@ Fontes:
 - Install proptypes: https://www.npmjs.com/package/prop-types
 - Criar context e Provider aula 17.1: https://app.betrybe.com/course/front-end/context-api-e-react-hooks/context-api-do-react/0cb0f74b-7d53-429d-8fb3-84edb046136f/conteudos/99236120-4262-4f69-83c7-b3bdb75aa52c/provider-e-consumer/2380faf8-dd56-4ac4-990d-9dedecf095cb?use_case=side_bar
 - Somar valores (number): https://stackoverflow.com/questions/7053511/javascript-sum-values
+- Esconder/mostrar saldo aula dia 12.1 ciclo de vida de componentes: https://app.betrybe.com/course/live-lectures/sd-cohort-xp-b#dia-121-ciclo-de-vida-de-componentes
 - 
 
 
