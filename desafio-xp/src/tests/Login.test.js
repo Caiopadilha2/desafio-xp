@@ -9,6 +9,12 @@ test('Input de email está na tela.', () => {
   expect(input).toBeInTheDocument();
 });
 
+test('Input de senha está na tela.', () => {
+  renderWithRouter(<Login />);
+  const input = screen.getByPlaceholderText('Password');
+  expect(input).toBeInTheDocument();
+});
+
 test('Botão está na tela.', () => {
   renderWithRouter(<Login />);
   const button = screen.getByRole('button', { name: 'Acessar' });
