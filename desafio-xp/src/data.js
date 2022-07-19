@@ -22,9 +22,9 @@ export const myStocks = [
 export const StocksToBy = [
   {
     id: 4,
-    name: 'ITUB4',
+    name: 'MGLU3',
     amount: 100,
-    value: 22,
+    value: 5,
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ export const StocksToBy = [
     value: 28,
   },
   {
-    id: 7,
+    id: 8,
     name: 'ITSA4',
     amount: 100,
     value: 10,
