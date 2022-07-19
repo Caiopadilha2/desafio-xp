@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import BalanceContext from '../context/BalanceContext';
 import HeaderComponent from './HeaderComponent';
 
 const BalanceComponent = () => {
   const history = useHistory();
+  const { balance } = useContext(BalanceContext);
+  console.log(balance);
 
   const confirme = () => {
     // todo: alguma lógica para somar ou reduzir saldo.
@@ -14,7 +17,7 @@ const BalanceComponent = () => {
     <div>
       <HeaderComponent />
       <section>
-        <p>Saldo em conta: R$500,00</p>
+        <p>{`Saldo em conta: R$${balance},00`}</p>
         <button
           type="button"
           // onClick={  }
