@@ -14,3 +14,9 @@ test('Título de ações disponíveis aparece na tela.', () => {
   const heading = screen.getByRole('heading', { name: /Disponíveis/i, level: 3 });
   expect(heading).toBeInTheDocument();
 });
+
+test('Botão para depósito/saque aparece na tela.', () => {
+  renderWithRouter(<Wallet />);
+  const button = screen.getByRole('button', { name: /depósito/i });
+  expect(button).toBeInTheDocument();
+});
