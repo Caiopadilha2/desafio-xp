@@ -4,7 +4,7 @@ const HeaderComponent = () => {
   const email = localStorage.getItem('userEmail');
   return (
     <div>
-      <h3>{ email }</h3>
+      <h3>{`Usuário: ${email}`}</h3>
     </div>
   );
 };

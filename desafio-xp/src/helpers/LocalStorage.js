@@ -1,5 +1,5 @@
-const saveEmailLocalStorage = (value) => {
-  localStorage.setItem('userEmail', JSON.stringify({ Usuário: value }));
-};
+const saveEmailLocalStorage = (value) => (
+  localStorage.setItem('userEmail', JSON.stringify(value))
+);
 
 export default saveEmailLocalStorage;
