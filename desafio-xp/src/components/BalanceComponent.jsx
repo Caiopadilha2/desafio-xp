@@ -4,6 +4,12 @@ import HeaderComponent from './HeaderComponent';
 
 const BalanceComponent = () => {
   const history = useHistory();
+
+  const confirme = () => {
+    // todo: alguma lógica para somar ou reduzir saldo.
+    history.push('/wallet');
+  };
+
   return (
     <div>
       <HeaderComponent />
@@ -40,7 +46,7 @@ const BalanceComponent = () => {
         </button>
         <button
           type="button"
-          // onClick={  }
+          onClick={ () => confirme() }
         >
           Confirmar
 

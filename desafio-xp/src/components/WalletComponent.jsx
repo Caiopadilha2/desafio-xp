@@ -6,6 +6,7 @@ const WalletComponent = () => {
   const history = useHistory();
 
   const redirectToNegociation = () => {
+    // todo: alguma lógica para levar as informações da ação clicada para a outra tela.
     history.push('/negociation');
   };
 
@@ -88,4 +89,4 @@ const WalletComponent = () => {
 
 export default WalletComponent;
 
-// refatorar pra ficar em uma função só.
+// todo: refatorar pra ficar em uma função só.
