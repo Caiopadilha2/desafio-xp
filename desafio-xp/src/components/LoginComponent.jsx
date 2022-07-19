@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import saveEmailLocalStorage from '../helpers/LocalStorage';
+import { saveEmailLocalStorage, saveDateLocalStorage } from '../helpers/LocalStorage';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
@@ -22,6 +22,7 @@ const LoginComponent = () => {
   const onSubmitLogin = () => {
     // salvar no localstorage e mudar de rota
     saveEmailLocalStorage(email);
+    saveDateLocalStorage();
     history.push('/wallet');
   };
 
