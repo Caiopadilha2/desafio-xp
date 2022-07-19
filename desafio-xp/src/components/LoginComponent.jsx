@@ -17,7 +17,7 @@ const LoginComponent = () => {
     }
     return true;
   };
-  // refatorar.
+  // todo: refatorar.
 
   const onSubmitLogin = () => {
     // salvar no localstorage e mudar de rota
