@@ -1,17 +1,29 @@
 import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
 import HeaderComponent from './HeaderComponent';
 
 const NegociationComponent = () => {
-  const { array, setArray, balance, setBalance } = useContext(BalanceContext);
+  const {
+    array,
+    balance,
+    setBalance,
+    stocksToBy,
+    myStocks,
+    setMyStocks,
+  } = useContext(BalanceContext);
   const [offerBuy, setOfferBy] = useState('');
   const [offerSale, setOfferSale] = useState('');
+  const history = useHistory();
 
   const buy = () => {
     if (offerBuy > balance) {
       global.alert('Você não possui saldo suficiente para esta oferta de compra.');
       setOfferBy('');
       return setBalance(Number(balance));
+    }
+    if (stocksToBy) {
+      setMyStocks([...myStocks, array[0]]);
     }
     global.alert('Sua requisição de compra foi enviada!');
     setBalance(Number(balance) - Number(offerBuy));
@@ -76,7 +88,13 @@ const NegociationComponent = () => {
           value={ offerSale }
         />
       </div>
-      <button type="button">Voltar</button>
+      <button
+        type="button"
+        onClick={ () => history.push('/wallet') }
+      >
+        Voltar
+
+      </button>
     </div>
   );
 };

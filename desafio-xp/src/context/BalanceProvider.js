@@ -6,7 +6,7 @@ import { myStocksData, StocksToByData, allStocksData } from '../data';
 function BalanceProvider({ children }) {
   const INITIAL_BALANCE = '900';
   const [balance, setBalance] = useState(INITIAL_BALANCE);
-  const [array, setArray] = useState([]);
+  const [array, setArray] = useState({});
   const [myStocks, setMyStocks] = useState(myStocksData);
   const [stocksToBy, setStocksToBy] = useState(StocksToByData);
   const [allStocks, setAllStocks] = useState(allStocksData);

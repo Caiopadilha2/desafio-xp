@@ -5,7 +5,7 @@ import BalanceContext from '../context/BalanceContext';
 const WalletComponent = () => {
   const history = useHistory();
   const { myStocks, stocksToBy, allStocks, setArray } = useContext(BalanceContext);
-  console.log(allStocks);
+  // console.log(allStocks);
 
   const selecionarAção = (IdAcaoClicada) => {
     const todasAsacoes = allStocks;
@@ -14,6 +14,8 @@ const WalletComponent = () => {
     console.log(acao);
     history.push('/negociation');
   };
+
+  console.log(myStocks);
 
   return (
     <div>
@@ -30,7 +32,7 @@ const WalletComponent = () => {
 
         <tbody>
           { myStocks.map(({ id, name, amount, value }) => (
-            <tr key={ id } id={ id }>
+            <tr key={ id }>
               <td>{name}</td>
               <td>{amount}</td>
               <td>{`R$ ${value},00`}</td>
