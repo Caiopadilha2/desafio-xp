@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { myStocks, StocksToBy } from '../data';
+import BalanceContext from '../context/BalanceContext';
+import { myStocks, StocksToBy, allStocks } from '../data';
 
 const WalletComponent = () => {
   const history = useHistory();
+  const { setArray } = useContext(BalanceContext);
+  console.log(allStocks);
 
-  const redirectToNegociation = () => {
-    // todo: alguma lógica para levar as informações da ação clicada para a outra tela.
+  const selecionarAção = (acaoClicada) => {
+    const todasAsacoes = allStocks;
+    const acao = todasAsacoes.filter((stock) => stock.id === acaoClicada);
+    setArray(acao);
+    console.log(acao);
     history.push('/negociation');
   };
 
@@ -31,7 +37,8 @@ const WalletComponent = () => {
               <td>{`R$ ${value},00`}</td>
               <button
                 type="button"
-                onClick={ () => redirectToNegociation() }
+                id={ id }
+                onClick={ () => selecionarAção(id) }
               >
                 Buy
               </button>
