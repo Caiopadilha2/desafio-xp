@@ -1,10 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
 
 const WalletComponent = () => {
   const history = useHistory();
-  const { myStocks, stocksToBy, allStocks, setArray } = useContext(BalanceContext);
+  const {
+    balance,
+    myStocks,
+    stocksToBy,
+    allStocks,
+    setArray,
+  } = useContext(BalanceContext);
+  const [hideBalance, setHideBalance] = useState(true);
   // console.log(allStocks);
 
   const selecionarAção = (IdAcaoClicada) => {
@@ -19,6 +26,15 @@ const WalletComponent = () => {
 
   return (
     <div>
+      <div>
+        <button
+          type="button"
+          onClick={ () => setHideBalance(!hideBalance) }
+        >
+          { hideBalance ? 'Esconder saldo' : 'Mostrar saldo'}
+        </button>
+        {hideBalance && <h3>{`Saldo em conta: R$${Number(balance)}`}</h3>}
+      </div>
       <h3>Minhas ações</h3>
       <table>
         <thead>

@@ -8,7 +8,7 @@ const BalanceComponent = () => {
   const { balance, setBalance } = useContext(BalanceContext);
   // const [money, setMoney] = useState(balance);
   const [deposito, setDeposito] = useState('');
-  const [hide, setHide] = useState(true);
+  const [hideBalance, setHideBalance] = useState(true);
   // console.log(balance);
   // console.log(deposito);
 
@@ -34,11 +34,11 @@ const BalanceComponent = () => {
         <div>
           <button
             type="button"
-            onClick={ () => setHide(!hide) }
+            onClick={ () => setHideBalance(!hideBalance) }
           >
-            { hide ? 'Esconder saldo' : 'Mostrar saldo'}
+            { hideBalance ? 'Esconder saldo' : 'Mostrar saldo'}
           </button>
-          {hide && <h3>{`Saldo em conta: R$${Number(balance)}`}</h3>}
+          {hideBalance && <h3>{`Saldo em conta: R$${Number(balance)}`}</h3>}
         </div>
 
         <input

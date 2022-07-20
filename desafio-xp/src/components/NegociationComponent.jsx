@@ -28,6 +28,7 @@ const NegociationComponent = () => {
     global.alert('Sua requisição de compra foi enviada!');
     setBalance(Number(balance) - Number(offerBuy));
     setOfferBy('');
+    history.push('/wallet');
   };
 
   const sale = () => {
