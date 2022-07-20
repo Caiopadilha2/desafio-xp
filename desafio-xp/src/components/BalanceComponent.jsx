@@ -1,22 +1,23 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
-import HeaderComponent from './HeaderComponent';
+// import HeaderComponent from './HeaderComponent';
 
 const BalanceComponent = () => {
   const history = useHistory();
   const { balance, setBalance } = useContext(BalanceContext);
   // const [money, setMoney] = useState(balance);
   const [deposito, setDeposito] = useState('');
+  const [hide, setHide] = useState(true);
   // console.log(balance);
   // console.log(deposito);
 
-  const Deposito = () => {
+  const depositar = () => {
     setBalance(Number(balance) + Number(deposito));
     setDeposito('');
   };
 
-  const Saque = () => {
+  const sacar = () => {
     if (deposito > balance) {
       global.alert('Você não tem saldo suficiente para este saque.');
       setDeposito('');
@@ -28,9 +29,17 @@ const BalanceComponent = () => {
 
   return (
     <div>
-      <HeaderComponent />
+
       <section>
-        <p>{`Saldo em conta: R$${Number(balance)}`}</p>
+        <div>
+          <button
+            type="button"
+            onClick={ () => setHide(!hide) }
+          >
+            { hide ? 'Esconder saldo' : 'Mostrar saldo'}
+          </button>
+          {hide && <h3>{`Saldo em conta: R$${Number(balance)}`}</h3>}
+        </div>
 
         <input
           placeholder="Informe o valor"
@@ -41,14 +50,14 @@ const BalanceComponent = () => {
         />
         <button
           type="button"
-          onClick={ () => Deposito() }
+          onClick={ () => depositar() }
         >
           Depositar
 
         </button>
         <button
           type="button"
-          onClick={ () => Saque() }
+          onClick={ () => sacar() }
         >
           Sacar
 
