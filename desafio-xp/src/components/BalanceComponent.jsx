@@ -19,7 +19,7 @@ const BalanceComponent = () => {
 
   const sacar = () => {
     if (deposito > balance) {
-      global.alert('Você não tem saldo suficiente para este saque.');
+      global.alert('Você não possui saldo suficiente para este saque.');
       setDeposito('');
       return setBalance(Number(balance));
     }

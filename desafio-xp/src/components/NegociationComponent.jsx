@@ -1,9 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import BalanceContext from '../context/BalanceContext';
 import HeaderComponent from './HeaderComponent';
 
 const NegociationComponent = () => {
-  const { array, setArray } = useContext(BalanceContext);
+  const { array, setArray, balance, setBalance } = useContext(BalanceContext);
+  const [offerBuy, setOfferBy] = useState('');
+  const [offerSale, setOfferSale] = useState('');
+
+  const buy = () => {
+    if (offerBuy > balance) {
+      global.alert('Você não possui saldo suficiente para esta oferta de compra.');
+      setOfferBy('');
+      return setBalance(Number(balance));
+    }
+    global.alert('Sua requisição de compra foi enviada!');
+    setBalance(Number(balance) - Number(offerBuy));
+    setOfferBy('');
+  };
+
+  const sale = () => {
+    setBalance(Number(balance) + Number(offerSale));
+    setOfferSale('');
+    global.alert('Sua requisição de venda foi enviada!');
+  };
 
   return (
     <div>
@@ -28,12 +47,34 @@ const NegociationComponent = () => {
         </tbody>
       </table>
       <div id="buy">
-        <button type="button">Comprar</button>
-        <input type="number" min="0" placeholder="Informe o Valor" />
+        <button
+          type="button"
+          onClick={ () => buy() }
+        >
+          Comprar
+        </button>
+        <input
+          type="number"
+          min="0"
+          placeholder="Informe o Valor"
+          onChange={ ({ target }) => setOfferBy(target.value) }
+          value={ offerBuy }
+        />
       </div>
       <div id="sale">
-        <button type="button">Vender</button>
-        <input type="number" min="0" placeholder="Informe o Valor" />
+        <button
+          type="button"
+          onClick={ () => sale() }
+        >
+          Vender
+        </button>
+        <input
+          type="number"
+          min="0"
+          placeholder="Informe o Valor"
+          onChange={ ({ target }) => setOfferSale(target.value) }
+          value={ offerSale }
+        />
       </div>
       <button type="button">Voltar</button>
     </div>
