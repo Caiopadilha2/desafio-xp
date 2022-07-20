@@ -23,7 +23,7 @@ const LoginComponent = () => {
   };
 
   return (
-    <div>
+    <form>
       <input
         type="email"
         placeholder="Email:"
@@ -37,14 +37,14 @@ const LoginComponent = () => {
         value={ password }
       />
       <button
-        type="button"
+        type="submit"
         disabled={ handleDisableButton() }
         onClick={ () => onSubmitLogin() }
       >
         Acessar
 
       </button>
-    </div>
+    </form>
   );
 };
 

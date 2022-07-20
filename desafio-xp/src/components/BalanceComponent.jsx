@@ -1,14 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
-// import HeaderComponent from './HeaderComponent';
+import onlynumber from '../helpers/onlyNumberInput';
+import HeaderComponent from './HeaderComponent';
 
 const BalanceComponent = () => {
   const history = useHistory();
   const { balance, setBalance } = useContext(BalanceContext);
   // const [money, setMoney] = useState(balance);
   const [deposito, setDeposito] = useState('');
-  const [hide, setHide] = useState(true);
+  const [hideBalance, setHideBalance] = useState(true);
   // console.log(balance);
   // console.log(deposito);
 
@@ -19,7 +20,7 @@ const BalanceComponent = () => {
 
   const sacar = () => {
     if (deposito > balance) {
-      global.alert('Você não tem saldo suficiente para este saque.');
+      global.alert('Você não possui saldo suficiente para este saque.');
       setDeposito('');
       return setBalance(Number(balance));
     }
@@ -28,52 +29,51 @@ const BalanceComponent = () => {
   };
 
   return (
-    <div>
 
-      <section>
-        <div>
-          <button
-            type="button"
-            onClick={ () => setHide(!hide) }
-          >
-            { hide ? 'Esconder saldo' : 'Mostrar saldo'}
-          </button>
-          {hide && <h3>{`Saldo em conta: R$${Number(balance)}`}</h3>}
-        </div>
-
-        <input
-          placeholder="Informe o valor"
-          type="number"
-          min="0"
-          onChange={ ({ target }) => setDeposito(target.value) }
-          value={ deposito }
-        />
+    <section>
+      <HeaderComponent />
+      <div>
         <button
           type="button"
-          onClick={ () => depositar() }
+          onClick={ () => setHideBalance(!hideBalance) }
         >
-          Depositar
-
+          { hideBalance ? 'Esconder saldo' : 'Mostrar saldo'}
         </button>
+        {hideBalance && <h3>{`Saldo em conta: R$${Number(balance)},00`}</h3>}
+      </div>
+
+      <input
+        placeholder="Informe o valor"
+        type="number"
+        onKeyPress={ onlynumber }
+        min="0"
+        onChange={ ({ target }) => setDeposito(target.value) }
+        value={ deposito }
+      />
+      <button
+        type="button"
+        onClick={ () => depositar() }
+      >
+        Depositar
+
+      </button>
+      <button
+        type="button"
+        onClick={ () => sacar() }
+      >
+        Sacar
+
+      </button>
+      <div>
         <button
           type="button"
-          onClick={ () => sacar() }
+          onClick={ () => history.push('/wallet') }
         >
-          Sacar
+          Voltar
 
         </button>
-        <div>
-          <button
-            type="button"
-            onClick={ () => history.push('/wallet') }
-          >
-            Voltar
-
-          </button>
-        </div>
-      </section>
-
-    </div>
+      </div>
+    </section>
   );
 };
 
