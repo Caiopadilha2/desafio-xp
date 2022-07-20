@@ -5,6 +5,6 @@ import Balance from '../components/BalanceComponent';
 
 test('Título de minhas ações aparece na tela.', () => {
   renderWithRouter(<Balance />);
-  const text = screen.getByText('Saldo em conta:');
+  const text = screen.getByRole('heading', { name: /Saldo/i });
   expect(text).toBeInTheDocument();
 });

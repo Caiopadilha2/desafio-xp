@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
-import HeaderComponent from './HeaderComponent';
+// import HeaderComponent from './HeaderComponent';
 
 const BalanceComponent = () => {
   const history = useHistory();
@@ -29,7 +29,7 @@ const BalanceComponent = () => {
 
   return (
     <div>
-      <HeaderComponent />
+
       <section>
         <div>
           <button
@@ -38,7 +38,7 @@ const BalanceComponent = () => {
           >
             { hide ? 'Esconder saldo' : 'Mostrar saldo'}
           </button>
-          {hide && <p>{`Saldo em conta: R$${Number(balance)}`}</p>}
+          {hide && <h3>{`Saldo em conta: R$${Number(balance)}`}</h3>}
         </div>
 
         <input
