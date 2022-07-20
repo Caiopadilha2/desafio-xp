@@ -1,16 +1,15 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
-import { myStocks, StocksToBy, allStocks } from '../data';
 
 const WalletComponent = () => {
   const history = useHistory();
-  const { setArray } = useContext(BalanceContext);
+  const { myStocks, stocksToBy, allStocks, setArray } = useContext(BalanceContext);
   console.log(allStocks);
 
-  const selecionarAção = (acaoClicada) => {
+  const selecionarAção = (IDacaoClicada) => {
     const todasAsacoes = allStocks;
-    const acao = todasAsacoes.filter((stock) => stock.id === acaoClicada);
+    const acao = todasAsacoes.filter((stock) => stock.id === IDacaoClicada);
     setArray(acao);
     console.log(acao);
     history.push('/negociation');
@@ -37,14 +36,13 @@ const WalletComponent = () => {
               <td>{`R$ ${value},00`}</td>
               <button
                 type="button"
-                id={ id }
                 onClick={ () => selecionarAção(id) }
               >
                 Buy
               </button>
               <button
                 type="button"
-                onClick={ () => redirectToNegociation() }
+                onClick={ () => selecionarAção(id) }
               >
                 Sale
               </button>
@@ -66,14 +64,14 @@ const WalletComponent = () => {
         </thead>
 
         <tbody>
-          { StocksToBy.map(({ id, name, amount, value }) => (
+          { stocksToBy.map(({ id, name, amount, value }) => (
             <tr key={ id } id={ id }>
               <td>{name}</td>
               <td>{amount}</td>
               <td>{`R$ ${value},00`}</td>
               <button
                 type="button"
-                onClick={ () => redirectToNegociation() }
+                onClick={ () => selecionarAção(id) }
               >
                 Buy
               </button>

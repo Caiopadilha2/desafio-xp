@@ -1,4 +1,4 @@
-export const myStocks = [
+export const myStocksData = [
   {
     id: 1,
     name: 'XPBR31',
@@ -20,7 +20,7 @@ export const myStocks = [
 
 ];
 
-export const StocksToBy = [
+export const StocksToByData = [
   {
     id: 4,
     name: 'ITUB4',
@@ -53,7 +53,7 @@ export const StocksToBy = [
   },
 ];
 
-export const allStocks = [
+export const allStocksData = [
   {
     id: 1,
     name: 'XPBR31',
