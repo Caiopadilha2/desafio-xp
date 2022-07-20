@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
 import HeaderComponent from './HeaderComponent';
+import onlynumber from '../helpers/onlyNumberInput';
 
 const NegociationComponent = () => {
   const {
@@ -16,6 +17,13 @@ const NegociationComponent = () => {
   const [offerSale, setOfferSale] = useState('');
   const history = useHistory();
 
+  // const removeFromToBy = (idAcao) => {
+  //   const todasAcoes = stocksToBy;
+  //   const acoesResultantes = todasAcoes.filter((acao) => acao.id !== idAcao);
+  //   setStocksToBy(acoesResultantes);
+  //   console.log(acoesResultantes);
+  // };
+
   const buy = () => {
     if (offerBuy > balance) {
       global.alert('Você não possui saldo suficiente para esta oferta de compra.');
@@ -24,6 +32,10 @@ const NegociationComponent = () => {
     }
     if (stocksToBy) {
       setMyStocks([...myStocks, array[0]]);
+      // const todasAcoes = stocksToBy;
+      // const acoesResultantes = todasAcoes.filter((acao) => acao.id !== stocksToBy.id);
+      // setStocksToBy(acoesResultantes);
+      // console.log(acoesResultantes);
     }
     global.alert('Sua requisição de compra foi enviada!');
     setBalance(Number(balance) - Number(offerBuy));
@@ -69,6 +81,7 @@ const NegociationComponent = () => {
         <input
           type="number"
           min="0"
+          onKeyPress={ onlynumber }
           placeholder="Informe o Valor"
           onChange={ ({ target }) => setOfferBy(target.value) }
           value={ offerBuy }
@@ -84,6 +97,7 @@ const NegociationComponent = () => {
         <input
           type="number"
           min="0"
+          onKeyPress={ onlynumber }
           placeholder="Informe o Valor"
           onChange={ ({ target }) => setOfferSale(target.value) }
           value={ offerSale }
