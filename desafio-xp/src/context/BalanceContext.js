@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const BalanceContext = createContext();
+const BalanceContext = createContext('');
 
 export default BalanceContext;
