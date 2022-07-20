@@ -7,9 +7,9 @@ const WalletComponent = () => {
   const { myStocks, stocksToBy, allStocks, setArray } = useContext(BalanceContext);
   console.log(allStocks);
 
-  const selecionarAção = (IDacaoClicada) => {
+  const selecionarAção = (IdAcaoClicada) => {
     const todasAsacoes = allStocks;
-    const acao = todasAsacoes.filter((stock) => stock.id === IDacaoClicada);
+    const acao = todasAsacoes.filter((stock) => stock.id === IdAcaoClicada);
     setArray(acao);
     console.log(acao);
     history.push('/negociation');
@@ -76,6 +76,7 @@ const WalletComponent = () => {
                 Buy
               </button>
               <button type="button" disabled>Sale</button>
+              {/* Todas as ações do array de "ações para comprar" vêm com botão de venda desabilitado. */}
             </tr>
           ))}
         </tbody>
