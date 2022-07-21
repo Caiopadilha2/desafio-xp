@@ -22,7 +22,7 @@ const BuyStockComponent = () => {
     if (Number(offerBuy) > Number(balance)) {
       MySwal.fire(
         'Oops... :(',
-        'Você não possui saldo suficiente para esta oferta de compra.',
+        'Você não possui saldo suficiente para esta requisição de compra.',
         'error',
       );
       // global.alert('Você não possui saldo suficiente para esta oferta de compra.');
