@@ -1,7 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import BalanceContext from '../context/BalanceContext';
 import onlynumber from '../helpers/onlyNumberInput';
+
+const MySwal = withReactContent(Swal);
 
 const SellStockComponent = () => {
   const {
@@ -15,7 +19,12 @@ const SellStockComponent = () => {
   const sale = () => {
     setBalance(Number(balance) + Number(offerSale));
     setOfferSale('');
-    global.alert('Sua requisição de venda foi enviada!');
+    MySwal.fire(
+      'Good job!',
+      'Sua requisição de venda foi enviada!',
+      'success',
+    );
+    // global.alert('Sua requisição de venda foi enviada!');
     history.push('/wallet');
   };
 
