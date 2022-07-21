@@ -27,13 +27,13 @@ const LoginComponent = () => {
       <input
         type="email"
         placeholder="Email:"
-        onChange={ ({ target }) => setEmail(target.value) }
+        onChange={ ({ target: { value } }) => setEmail(value) }
         value={ email }
       />
       <input
         type="password"
         placeholder="Password"
-        onChange={ ({ target }) => setPassword(target.value) }
+        onChange={ ({ target: { value } }) => setPassword(value) }
         value={ password }
       />
       <button

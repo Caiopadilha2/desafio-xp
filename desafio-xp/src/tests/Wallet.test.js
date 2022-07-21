@@ -20,3 +20,9 @@ test('Botão para depósito/saque aparece na tela.', () => {
   const button = screen.getByRole('button', { name: /depósito/i });
   expect(button).toBeInTheDocument();
 });
+
+test('Botão para depósito/saque redireciona para balance.', async () => {
+  renderWithRouter(<Wallet />);
+  const button = screen.getByRole('button', { name: /Depósito/i });
+  expect(button).toBeInTheDocument();
+});
