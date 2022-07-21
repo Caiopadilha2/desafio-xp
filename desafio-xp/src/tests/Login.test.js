@@ -25,7 +25,14 @@ test('Botão está na tela.', () => {
 // test('Botão de acessar redireciona para página Wallet.', () => {
 //   renderWithRouter(<Login />);
 //   const button = screen.getByRole('button', { name: 'Acessar' });
+//   expect(button).toBeInTheDocument();
+//   const inputEmail = screen.getByPlaceholderText('Email:');
+//   expect(inputEmail).toBeInTheDocument();
+//   const inputPassword = screen.getByPlaceholderText('Password');
+//   expect(inputPassword).toBeInTheDocument();
+//   userEvent.type(inputEmail, 'caiopadilha@teste.com');
+//   userEvent.type(inputPassword, '123456');
 //   userEvent.click(button);
-//   const title = screen.getByRole('heading', { name: 'Minhas ações', level: 3 });
-//   expect(title).toBeInTheDocument();
+//   const heading = screen.getByText(/minhas ações/);
+//   expect(heading).toBeInTheDocument();
 // });

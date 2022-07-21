@@ -12,17 +12,14 @@ const WalletComponent = () => {
     setArray,
   } = useContext(BalanceContext);
   const [hideBalance, setHideBalance] = useState(true);
-  // console.log(allStocks);
+  console.log(stocksToBy);
 
   const selecionarAção = (IdAcaoClicada) => {
     const todasAsacoes = allStocks;
     const acao = todasAsacoes.filter((stock) => stock.id === IdAcaoClicada);
     setArray(acao);
-    // console.log(acao);
     history.push('/negociation');
   };
-
-  // console.log(myStocks);
 
   return (
     <div>
@@ -47,7 +44,7 @@ const WalletComponent = () => {
         </thead>
 
         <tbody>
-          { myStocks.map(({ id, name, amount, value }) => (
+          { myStocks?.map(({ id, name, amount, value }) => (
             <tr key={ id }>
               <td>{name}</td>
               <td>{amount}</td>
@@ -82,7 +79,7 @@ const WalletComponent = () => {
         </thead>
 
         <tbody>
-          { stocksToBy.map(({ id, name, amount, value }) => (
+          { stocksToBy?.map(({ id, name, amount, value }) => (
             <tr key={ id } id={ id }>
               <td>{name}</td>
               <td>{amount}</td>
