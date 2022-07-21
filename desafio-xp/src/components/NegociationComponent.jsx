@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
-import HeaderComponent from './HeaderComponent';
+// import HeaderComponent from './HeaderComponent';
 import onlynumber from '../helpers/onlyNumberInput';
 
 const NegociationComponent = () => {
@@ -25,7 +25,7 @@ const NegociationComponent = () => {
   // };
 
   const buy = () => {
-    if (offerBuy > balance) {
+    if (Number(offerBuy) > Number(balance)) {
       global.alert('Você não possui saldo suficiente para esta oferta de compra.');
       setOfferBy('');
       return setBalance(Number(balance));
@@ -47,11 +47,11 @@ const NegociationComponent = () => {
     setBalance(Number(balance) + Number(offerSale));
     setOfferSale('');
     global.alert('Sua requisição de venda foi enviada!');
+    history.push('/wallet');
   };
 
   return (
     <div>
-      <HeaderComponent />
       <h2>Comprar/Vender ação:</h2>
       <table>
         <thead>
@@ -62,7 +62,7 @@ const NegociationComponent = () => {
           </tr>
         </thead>
         <tbody>
-          { array.map(({ id, name, amount, value }) => (
+          { array && array.map(({ id, name, amount, value }) => (
             <tr key={ id }>
               <td>{name}</td>
               <td>{amount}</td>

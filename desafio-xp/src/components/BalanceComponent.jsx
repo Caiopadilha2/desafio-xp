@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
 import onlynumber from '../helpers/onlyNumberInput';
-import HeaderComponent from './HeaderComponent';
+// import HeaderComponent from './HeaderComponent';
 
 const BalanceComponent = () => {
   const history = useHistory();
@@ -19,7 +19,7 @@ const BalanceComponent = () => {
   };
 
   const sacar = () => {
-    if (deposito > balance) {
+    if (Number(deposito) > Number(balance)) {
       global.alert('Você não possui saldo suficiente para este saque.');
       setDeposito('');
       return setBalance(Number(balance));
@@ -31,7 +31,6 @@ const BalanceComponent = () => {
   return (
 
     <section>
-      <HeaderComponent />
       <div>
         <button
           type="button"

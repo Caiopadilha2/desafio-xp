@@ -20,6 +20,7 @@ test('Botão está na tela.', () => {
   renderWithRouter(<Login />);
   const button = screen.getByRole('button', { name: 'Acessar' });
   expect(button).toBeInTheDocument();
+  expect(button).toBeDisabled();
 });
 
 // test('Botão de acessar redireciona para página Wallet.', () => {
