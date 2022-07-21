@@ -50,6 +50,7 @@ Para rodar os testes, rode o seguinte comando
 | React Router| https://v5.reactrouter.com/web/guides/quick-start |
 | React Testing Library | https://testing-library.com/docs/react-testing-library/intro/ |
 | Tailwind CSS | https://tailwindcss.com/ |
+| SweetAlert2 | https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html|
 
 ## Documentação de cores
 
