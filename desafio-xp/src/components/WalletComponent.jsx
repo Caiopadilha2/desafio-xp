@@ -44,7 +44,7 @@ const WalletComponent = () => {
         </thead>
 
         <tbody>
-          { myStocks?.map(({ id, name, amount, value }) => (
+          { myStocks && myStocks.map(({ id, name, amount, value }) => (
             <tr key={ id }>
               <td>{name}</td>
               <td>{amount}</td>
@@ -79,7 +79,7 @@ const WalletComponent = () => {
         </thead>
 
         <tbody>
-          { stocksToBy?.map(({ id, name, amount, value }) => (
+          { stocksToBy && stocksToBy.map(({ id, name, amount, value }) => (
             <tr key={ id } id={ id }>
               <td>{name}</td>
               <td>{amount}</td>
