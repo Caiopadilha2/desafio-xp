@@ -100,6 +100,8 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
  - [Aula dia 12.1 - ciclo de vida de componentes(Mostrar/Esconder saldo)](https://app.betrybe.com/course/live-lectures/sd-cohort-xp-b#dia-121-ciclo-de-vida-de-componentes)
  - [Permitir apenas números em campos de input](http://sooho.com.br/dicas-e-truques/javascript/permitir-apenas-numeros-em-campos-input-text/)
  - [Testes RTL - Botão está desabilitado?](https://testing-library.com/docs/react-testing-library/example-intro)
+ - [Filtrar nomes com input controlado - Monitoria dia 29/03/2022](https://trybecourse.slack.com/archives/C02HY0NGPK4/p1648580022479779?thread_ts=1646670674.750429&cid=C02HY0NGPK4))
+ 
 
         
 
