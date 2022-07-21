@@ -46,7 +46,7 @@ const BalanceComponent = () => {
         type="number"
         onKeyPress={ onlynumber }
         min="0"
-        onChange={ ({ target }) => setDeposito(target.value) }
+        onChange={ ({ target: { value } }) => setDeposito(value) }
         value={ deposito }
       />
       <button

@@ -52,7 +52,7 @@ const SellStockComponent = () => {
           min="0"
           onKeyPress={ onlynumber }
           placeholder="Informe o Valor"
-          onChange={ ({ target }) => setOfferSale(target.value) }
+          onChange={ ({ target: { value } }) => setOfferSale(value) }
           value={ offerSale }
         />
       </div>

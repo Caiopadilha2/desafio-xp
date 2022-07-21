@@ -60,7 +60,7 @@ const BuyStockComponent = () => {
           min="0"
           onKeyPress={ onlynumber }
           placeholder="Informe o Valor"
-          onChange={ ({ target }) => setOfferBy(target.value) }
+          onChange={ ({ target: { value } }) => setOfferBy(value) }
           value={ offerBuy }
         />
       </div>
