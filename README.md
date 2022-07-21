@@ -102,7 +102,12 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
  - [Testes RTL - Botão está desabilitado?](https://testing-library.com/docs/react-testing-library/example-intro)
  - [Filtrar nomes com input controlado - Monitoria dia 29/03/2022](https://trybecourse.slack.com/archives/C02HY0NGPK4/p1648580022479779?thread_ts=1646670674.750429&cid=C02HY0NGPK4))
  
+## Melhorias futuras
 
+ - Implementar o Design System SOMA, que trouxe diversas melhorias para as marcas do grupo XP. O SOMA DS (design system) é a forma de construir produtos digitais na XP Inc., a partir de uma arquitetura inteligente e flexível para atender todas as marcas da companhia.
+https://soma.xpi.com.br/
+
+ - Funcionalidade Y 
         
 
 
