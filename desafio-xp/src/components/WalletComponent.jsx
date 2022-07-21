@@ -12,13 +12,20 @@ const WalletComponent = () => {
     setArray,
   } = useContext(BalanceContext);
   const [hideBalance, setHideBalance] = useState(true);
-  console.log(stocksToBy);
+  // console.log(stocksToBy);
 
-  const selecionarAção = (IdAcaoClicada) => {
+  const selecionarAçãoCompra = (IdAcaoClicada) => {
     const todasAsacoes = allStocks;
     const acao = todasAsacoes.filter((stock) => stock.id === IdAcaoClicada);
     setArray(acao);
-    history.push('/negociation');
+    history.push('/buystock');
+  };
+
+  const selecionarAçãoVenda = (IdAcaoClicada) => {
+    const todasAsacoes = allStocks;
+    const acao = todasAsacoes.filter((stock) => stock.id === IdAcaoClicada);
+    setArray(acao);
+    history.push('/sellstock');
   };
 
   return (
@@ -51,13 +58,13 @@ const WalletComponent = () => {
               <td>{`R$ ${value},00`}</td>
               <button
                 type="button"
-                onClick={ () => selecionarAção(id) }
+                onClick={ () => selecionarAçãoCompra(id) }
               >
                 Buy
               </button>
               <button
                 type="button"
-                onClick={ () => selecionarAção(id) }
+                onClick={ () => selecionarAçãoVenda(id) }
               >
                 Sale
               </button>
@@ -86,7 +93,7 @@ const WalletComponent = () => {
               <td>{`R$ ${value},00`}</td>
               <button
                 type="button"
-                onClick={ () => selecionarAção(id) }
+                onClick={ () => selecionarAçãoCompra(id) }
               >
                 Buy
               </button>
@@ -101,7 +108,7 @@ const WalletComponent = () => {
         type="button"
         onClick={ () => history.push('/balance') }
       >
-        Depósito/Saque
+        Depósito / Saque
 
       </button>
     </div>

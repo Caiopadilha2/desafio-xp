@@ -3,55 +3,33 @@ import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
 import onlynumber from '../helpers/onlyNumberInput';
 
-const NegociationComponent = () => {
+const BuyStockComponent = () => {
   const {
     array,
     balance,
     setBalance,
-    stocksToBy,
     myStocks,
     setMyStocks,
   } = useContext(BalanceContext);
-  const [offerBuy, setOfferBuy] = useState('');
-  const [offerSale, setOfferSale] = useState('');
+  const [offerBuy, setOfferBy] = useState('');
   const history = useHistory();
-
-  // const removeFromToBy = (idAcao) => {
-  //   const todasAcoes = stocksToBy;
-  //   const acoesResultantes = todasAcoes.filter((acao) => acao.id !== idAcao);
-  //   setStocksToBy(acoesResultantes);
-  //   console.log(acoesResultantes);
-  // };
 
   const buy = () => {
     if (Number(offerBuy) > Number(balance)) {
       global.alert('Você não possui saldo suficiente para esta oferta de compra.');
-      setOfferBuy('');
+      setOfferBy('');
       return setBalance(Number(balance));
     }
-    if (stocksToBy) {
-      setMyStocks([...myStocks, array[0]]);
-      // const todasAcoes = stocksToBy;
-      // const acoesResultantes = todasAcoes.filter((acao) => acao.id !== stocksToBy.id);
-      // setStocksToBy(acoesResultantes);
-      // console.log(acoesResultantes);
-    }
+    setMyStocks([...myStocks, array[0]]);
     global.alert('Sua requisição de compra foi enviada!');
     setBalance(Number(balance) - Number(offerBuy));
-    setOfferBuy('');
-    history.push('/wallet');
-  };
-
-  const sale = () => {
-    setBalance(Number(balance) + Number(offerSale));
-    setOfferSale('');
-    global.alert('Sua requisição de venda foi enviada!');
+    setOfferBy('');
     history.push('/wallet');
   };
 
   return (
     <div>
-      <h2>Comprar/Vender ação:</h2>
+      <h2>Comprar ação:</h2>
       <table>
         <thead>
           <tr>
@@ -86,22 +64,6 @@ const NegociationComponent = () => {
           value={ offerBuy }
         />
       </div>
-      <div id="sale">
-        <button
-          type="button"
-          onClick={ () => sale() }
-        >
-          Vender
-        </button>
-        <input
-          type="number"
-          min="0"
-          onKeyPress={ onlynumber }
-          placeholder="Informe o Valor"
-          onChange={ ({ target }) => setOfferSale(target.value) }
-          value={ offerSale }
-        />
-      </div>
       <button
         type="button"
         onClick={ () => history.push('/wallet') }
@@ -112,6 +74,5 @@ const NegociationComponent = () => {
     </div>
   );
 };
-// todo: provavelmente terei que separar em 02 páginas, uma de venda e outra de compra.
 
-export default NegociationComponent;
+export default BuyStockComponent;
