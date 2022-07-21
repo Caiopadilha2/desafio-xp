@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
+import FilterName from './FilterName';
 
 const WalletComponent = () => {
   const history = useHistory();
@@ -10,6 +11,7 @@ const WalletComponent = () => {
     stocksToBy,
     allStocks,
     setArray,
+    name: filterName,
   } = useContext(BalanceContext);
   const [hideBalance, setHideBalance] = useState(true);
   // console.log(stocksToBy);
@@ -27,6 +29,9 @@ const WalletComponent = () => {
     setArray(acao);
     history.push('/sellstock');
   };
+
+  const filteredStocks = () => stocksToBy.filter(({ name }) => name.toLowerCase()
+    .includes(filterName.toLowerCase()));
 
   return (
     <div>
@@ -75,6 +80,7 @@ const WalletComponent = () => {
       </table>
 
       <h3>Disponíveis para investir</h3>
+      <FilterName />
       <table>
         <thead>
           <tr>
@@ -86,7 +92,7 @@ const WalletComponent = () => {
         </thead>
 
         <tbody>
-          { stocksToBy && stocksToBy.map(({ id, name, amount, value }) => (
+          { stocksToBy && filteredStocks().map(({ id, name, amount, value }) => (
             <tr key={ id } id={ id }>
               <td>{name}</td>
               <td>{amount}</td>

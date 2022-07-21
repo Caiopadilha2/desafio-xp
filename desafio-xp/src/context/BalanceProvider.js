@@ -10,6 +10,7 @@ function BalanceProvider({ children }) {
   const [myStocks, setMyStocks] = useState(myStocksData);
   const [stocksToBy, setStocksToBy] = useState(StocksToByData);
   const [allStocks, setAllStocks] = useState(allStocksData);
+  const [name, setName] = useState('');
 
   const contextValue = {
     balance,
@@ -22,6 +23,8 @@ function BalanceProvider({ children }) {
     setStocksToBy,
     allStocks,
     setAllStocks,
+    name,
+    setName,
   };
 
   return (
