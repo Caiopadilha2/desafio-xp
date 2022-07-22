@@ -102,7 +102,7 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
  - [Permitir apenas números em campos de input](http://sooho.com.br/dicas-e-truques/javascript/permitir-apenas-numeros-em-campos-input-text/)
  - [Testes RTL - Botão está desabilitado?](https://testing-library.com/docs/react-testing-library/example-intro)
  - [Filtrar nomes com input controlado - Monitoria dia 29/03/2022](https://trybecourse.slack.com/archives/C02HY0NGPK4/p1648580022479779?thread_ts=1646670674.750429&cid=C02HY0NGPK4))
- - [Inputs/alertas personalizáveis](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html)
+ - [Alertas/avisos personalizáveis](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html)
  
  
 ## Melhorias futuras
