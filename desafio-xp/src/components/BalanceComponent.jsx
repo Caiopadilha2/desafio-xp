@@ -22,7 +22,7 @@ const BalanceComponent = () => {
     setDeposito('');
     MySwal.fire(
       'Muito bem!',
-      'Dinheiro depositado na sua conta!',
+      'Dinheiro depositado na sua conta! 💵',
       'success',
     );
   };
@@ -37,6 +37,11 @@ const BalanceComponent = () => {
       setDeposito('');
       return setBalance(Number(balance));
     }
+    MySwal.fire(
+      'Muito bem!',
+      'Você resgatou seu dinheiro com sucesso! 💵',
+      'success',
+    );
     setBalance(Number(balance) - Number(deposito));
     setDeposito('');
   };

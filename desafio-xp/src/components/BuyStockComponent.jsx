@@ -32,7 +32,7 @@ const BuyStockComponent = () => {
     setMyStocks([...myStocks, array[0]]);
     MySwal.fire(
       'Muito bem!',
-      'Sua requisição de venda foi enviada!',
+      'Sua requisição de compra foi enviada! 📈',
       'success',
     );
     // global.alert('Sua requisição de compra foi enviada!');
