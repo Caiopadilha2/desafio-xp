@@ -77,7 +77,7 @@ Para rodar os testes, rode o seguinte comando
 
 ## Stacks utilizadas
 
-**Front-end:** React, Context, TailwindCSS
+**Front-end:** React, Context, TailwindCSS. Motivos para utilizar Tailwind: utility first (nomes das classes), se comporta bem com ferramentas que componentizam, mobile first...
 
 
 
