@@ -20,7 +20,7 @@ const SellStockComponent = () => {
     setBalance(Number(balance) + Number(offerSale));
     setOfferSale('');
     MySwal.fire(
-      'Good job!',
+      'Muito bem!',
       'Sua requisição de venda foi enviada!',
       'success',
     );

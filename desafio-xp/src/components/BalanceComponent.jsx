@@ -1,8 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import BalanceContext from '../context/BalanceContext';
 import onlynumber from '../helpers/onlyNumberInput';
 // import HeaderComponent from './HeaderComponent';
+
+const MySwal = withReactContent(Swal);
 
 const BalanceComponent = () => {
   const history = useHistory();
@@ -16,11 +20,20 @@ const BalanceComponent = () => {
   const depositar = () => {
     setBalance(Number(balance) + Number(deposito));
     setDeposito('');
+    MySwal.fire(
+      'Muito bem!',
+      'Dinheiro depositado na sua conta!',
+      'success',
+    );
   };
 
   const sacar = () => {
     if (Number(deposito) > Number(balance)) {
-      global.alert('Você não possui saldo suficiente para este saque.');
+      MySwal.fire(
+        'Oops... :(',
+        'Você não possui saldo suficiente para este saque.',
+        'error',
+      );
       setDeposito('');
       return setBalance(Number(balance));
     }

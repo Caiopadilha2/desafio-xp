@@ -31,7 +31,7 @@ const BuyStockComponent = () => {
     }
     setMyStocks([...myStocks, array[0]]);
     MySwal.fire(
-      'Good job!',
+      'Muito bem!',
       'Sua requisição de venda foi enviada!',
       'success',
     );
