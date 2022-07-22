@@ -1,7 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import BalanceContext from '../context/BalanceContext';
 import onlynumber from '../helpers/onlyNumberInput';
+
+const MySwal = withReactContent(Swal);
 
 const BuyStockComponent = () => {
   const {
@@ -16,12 +20,22 @@ const BuyStockComponent = () => {
 
   const buy = () => {
     if (Number(offerBuy) > Number(balance)) {
-      global.alert('Você não possui saldo suficiente para esta oferta de compra.');
+      MySwal.fire(
+        'Oops... :(',
+        'Você não possui saldo suficiente para esta requisição de compra.',
+        'error',
+      );
+      // global.alert('Você não possui saldo suficiente para esta oferta de compra.');
       setOfferBy('');
       return setBalance(Number(balance));
     }
     setMyStocks([...myStocks, array[0]]);
-    global.alert('Sua requisição de compra foi enviada!');
+    MySwal.fire(
+      'Muito bem!',
+      'Sua requisição de compra foi enviada! 📈',
+      'success',
+    );
+    // global.alert('Sua requisição de compra foi enviada!');
     setBalance(Number(balance) - Number(offerBuy));
     setOfferBy('');
     history.push('/wallet');
