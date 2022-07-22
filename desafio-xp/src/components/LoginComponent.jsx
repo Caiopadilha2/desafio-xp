@@ -25,22 +25,22 @@ const LoginComponent = () => {
 
   return (
     <div className="bg-black min-h-screen flex items-center justify-center text-white">
-      <section className="bg-zinc-800 max-w-lg rounded-2xl py-10 px-16">
+      <section className="bg-zinc-800 max-w-lg rounded-2xl py-14 px-16">
         <div className="bg-white rounded-full w-36 h-20 mx-auto mb-20">
           <img src={ logo } alt="Logo xp" className="w-54" />
         </div>
         <form>
-          <label htmlFor="email" className="font-bold text-sm">
+          <label htmlFor="email" className="font-medium">
             Email
             <input
               type="email"
               onChange={ ({ target: { value } }) => setEmail(value) }
               value={ email }
               id="email"
-              className="block w-full rounded text-lg text-zinc-800 p-1"
+              className="block w-full rounded text-lg text-zinc-800 p-1 mb-2"
             />
           </label>
-          <label htmlFor="password">
+          <label htmlFor="password" className="font-medium">
             Password
             <input
               type="password"
