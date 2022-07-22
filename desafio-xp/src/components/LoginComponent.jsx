@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { saveEmailLocalStorage, saveDateLocalStorage } from '../helpers/LocalStorage';
-import logo from '../Logo.png';
+import logo from '../assets/logo.png';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');

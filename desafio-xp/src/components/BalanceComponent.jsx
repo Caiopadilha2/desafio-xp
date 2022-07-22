@@ -4,6 +4,8 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import BalanceContext from '../context/BalanceContext';
 import onlynumber from '../helpers/onlyNumberInput';
+import olhoAberto from '../assets/olho_aberto.jpeg';
+import olhoFechado from '../assets/olho_fechado.jpeg';
 // import HeaderComponent from './HeaderComponent';
 
 const MySwal = withReactContent(Swal);
@@ -14,6 +16,7 @@ const BalanceComponent = () => {
   // const [money, setMoney] = useState(balance);
   const [deposito, setDeposito] = useState('');
   const [hideBalance, setHideBalance] = useState(true);
+  const [eyeOpen, setEyeOpen] = useState(true);
   // console.log(balance);
   // console.log(deposito);
 
@@ -46,6 +49,11 @@ const BalanceComponent = () => {
     setDeposito('');
   };
 
+  const handleHide = () => {
+    setHideBalance(!hideBalance);
+    setEyeOpen(!eyeOpen);
+  };
+
   return (
 
     <div className="bg-black min-h-screen flex items-center justify-center text-white">
@@ -53,11 +61,16 @@ const BalanceComponent = () => {
         <div>
           <button
             type="button"
-            onClick={ () => setHideBalance(!hideBalance) }
+            onClick={ () => handleHide() }
           >
-            { hideBalance ? 'E s' : 'Mo s'}
+            <img
+              src={ eyeOpen ? olhoAberto : olhoFechado }
+              alt="esconder saldo"
+              className="w-12"
+            />
           </button>
-          {hideBalance && <h3>{`Saldo em conta: R$${Number(balance)},00`}</h3>}
+          <h3>Saldo em conta:</h3>
+          {hideBalance ? <h3>{`R$${Number(balance)},00`}</h3> : <h3>R$ --,--</h3>}
         </div>
 
         <input
@@ -67,7 +80,7 @@ const BalanceComponent = () => {
           min="0"
           onChange={ ({ target: { value } }) => setDeposito(value) }
           value={ deposito }
-          className="block w-full rounded text-lg text-zinc-800 p-1 mb-1"
+          className="block w-full rounded text-lg text-zinc-800 p-1 mb-1 mt-3"
         />
         <button
           type="button"
