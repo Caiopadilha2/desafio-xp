@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { saveEmailLocalStorage, saveDateLocalStorage } from '../helpers/LocalStorage';
+import logo from '../Logo.png';
 
 const LoginComponent = () => {
   const [email, setEmail] = useState('');
@@ -23,28 +24,44 @@ const LoginComponent = () => {
   };
 
   return (
-    <form>
-      <input
-        type="email"
-        placeholder="Email:"
-        onChange={ ({ target: { value } }) => setEmail(value) }
-        value={ email }
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={ ({ target: { value } }) => setPassword(value) }
-        value={ password }
-      />
-      <button
-        type="submit"
-        disabled={ handleDisableButton() }
-        onClick={ () => onSubmitLogin() }
-      >
-        Acessar
+    <div className="bg-black min-h-screen flex items-center justify-center text-white">
+      <section className="bg-zinc-800 max-w-lg rounded-2xl py-10 px-16">
+        <div className="bg-white rounded-full w-36 h-20 mx-auto mb-20">
+          <img src={ logo } alt="Logo xp" className="w-54" />
+        </div>
+        <form>
+          <label htmlFor="email" className="font-bold text-sm">
+            Email
+            <input
+              type="email"
+              onChange={ ({ target: { value } }) => setEmail(value) }
+              value={ email }
+              id="email"
+              className="block w-full rounded text-lg text-zinc-800 p-1"
+            />
+          </label>
+          <label htmlFor="password">
+            Password
+            <input
+              type="password"
+              onChange={ ({ target: { value } }) => setPassword(value) }
+              value={ password }
+              id="password"
+              className="block w-full rounded text-lg text-zinc-800 p-1"
+            />
+          </label>
+          <button
+            type="submit"
+            disabled={ handleDisableButton() }
+            onClick={ () => onSubmitLogin() }
+            className="bg-yellow-400 p-2 w-full mt-8 rounded-md text-black text-lg"
+          >
+            Acessar
 
-      </button>
-    </form>
+          </button>
+        </form>
+      </section>
+    </div>
   );
 };
 
