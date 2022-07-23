@@ -69,9 +69,10 @@ Para rodar os testes, rode o seguinte comando
 - Controle as ações que você possui na sua carteira e veja ações disponíveis no mercado.
 - Compre ações disponíveis no mercado ou venda suas ações.
 - Deposite e/ou saque seu dinheiro, com atualização do saldo.
-- Filtre as ações por nome ou valor (?).
-- Canal para entrar em contato com a CVM(Comissão de Valores Mobiliários).
+- Filtre as ações por nome.
 - Acesse o site da XP para dicas de investimento.
+- Canal para entrar em contato com a CVM (Comissão de Valores Mobiliários).
+- Abra sua conta na XP investimentos.
 - Faça logout do aplicativo.
 
 
