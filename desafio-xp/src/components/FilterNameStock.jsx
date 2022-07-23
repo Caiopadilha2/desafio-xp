@@ -11,7 +11,7 @@ const FilterNameStock = () => {
         value={ FilterName }
         onChange={ ({ target: { value } }) => setFilterName(value) }
         placeholder="Busque uma ação"
-        className="text-center mb-4"
+        className="text-center mb-4 text-black"
       />
     </form>
   );
