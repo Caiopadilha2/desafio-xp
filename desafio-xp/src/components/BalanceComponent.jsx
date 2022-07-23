@@ -27,7 +27,11 @@ const BalanceComponent = () => {
       'Muito bem!',
       'Dinheiro depositado na sua conta! 💵',
       'success',
-    );
+    ).then((result) => {
+      if (result.isConfirmed) {
+        history.push('/wallet');
+      }
+    });
   };
 
   const sacar = () => {
@@ -44,7 +48,11 @@ const BalanceComponent = () => {
       'Muito bem!',
       'Você resgatou seu dinheiro com sucesso! 💵',
       'success',
-    );
+    ).then(({ isConfirmed }) => {
+      if (isConfirmed) {
+        history.push('/wallet');
+      }
+    });
     setBalance(Number(balance) - Number(deposito));
     setDeposito('');
   };
