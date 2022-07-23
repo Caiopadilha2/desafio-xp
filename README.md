@@ -101,9 +101,10 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
  - [Aula dia 12.1 - ciclo de vida de componentes(Mostrar/Esconder saldo)](https://app.betrybe.com/course/live-lectures/sd-cohort-xp-b#dia-121-ciclo-de-vida-de-componentes)
  - [Permitir apenas números em campos de input](http://sooho.com.br/dicas-e-truques/javascript/permitir-apenas-numeros-em-campos-input-text/)
  - [Testes RTL - Botão está desabilitado?](https://testing-library.com/docs/react-testing-library/example-intro)
- - [Filtrar nomes com input controlado - Monitoria dia 29/03/2022](https://trybecourse.slack.com/archives/C02HY0NGPK4/p1648580022479779?thread_ts=1646670674.750429&cid=C02HY0NGPK4))
+ - [Filtrar nomes com input controlado - Monitoria dia 29/03/2022](https://trybecourse.slack.com/archives/C02HY0NGPK4/p1648580022479779?thread_ts=1646670674.750429&cid=C02HY0NGPK4)
  - [Alertas/avisos personalizáveis](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html)
- - [Tailwind CSS - Workshop CSS](https://app.betrybe.com/course/live-lectures/sd-cohort-xp-b#dia-165-workshop-css))
+ - [Tailwind CSS - Workshop CSS](https://app.betrybe.com/course/live-lectures/sd-cohort-xp-b#dia-165-workshop-css)
+ - [Redirecionar para outra aba](https://www.freecodecamp.org/portuguese/news/como-usar-o-html-para-abrir-um-link-em-uma-nova-aba/)
  
  
 ## Melhorias futuras
