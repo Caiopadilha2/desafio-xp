@@ -52,6 +52,14 @@ const LoginComponent = () => {
               className="block w-full rounded text-lg text-zinc-800 p-1 mb-2 text-center"
             />
           </label>
+          <a
+            href="https://cadastro.xpi.com.br/desktop/step/1"
+            className="underline flex justify-end"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Abra sua conta
+          </a>
           <button
             type="submit"
             disabled={ handleDisableButton() }
