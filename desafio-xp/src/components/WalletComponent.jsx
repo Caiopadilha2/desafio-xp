@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
 import FilterNameStock from './FilterNameStock';
+import olhoAberto from '../assets/olho_aberto.jpeg';
+import olhoFechado from '../assets/olho_fechado.jpeg';
 
 const WalletComponent = () => {
   const history = useHistory();
@@ -14,7 +16,7 @@ const WalletComponent = () => {
     filterName,
   } = useContext(BalanceContext);
   const [hideBalance, setHideBalance] = useState(true);
-  // console.log(stocksToBy);
+  const [eyeOpen, setEyeOpen] = useState(true);
 
   const selecionarAçãoCompra = (IdAcaoClicada) => {
     const todasAsacoes = allStocks;
@@ -33,16 +35,27 @@ const WalletComponent = () => {
   const filteredStocks = () => stocksToBy.filter(({ name }) => name.toLowerCase()
     .includes(filterName.toLowerCase()));
 
+  const handleHide = () => {
+    setHideBalance(!hideBalance);
+    setEyeOpen(!eyeOpen);
+  };
+
   return (
     <div className="bg-zinc-800 border-2 rounded-2xl max-w-lg py-16 px-12">
       <div>
         <button
           type="button"
-          onClick={ () => setHideBalance(!hideBalance) }
+          onClick={ () => handleHide() }
         >
-          { hideBalance ? 'Esconder saldo' : 'Mostrar saldo'}
+          <img
+            src={ eyeOpen ? olhoAberto : olhoFechado }
+            alt="esconder saldo"
+            className="w-10"
+          />
         </button>
-        {hideBalance && <h3>{`Saldo em conta: R$${Number(balance)},00`}</h3>}
+        <h3 className="my-1 text-lg">Saldo em conta:</h3>
+        {hideBalance ? <h3 className="my-1 text-lg">{`R$${Number(balance)},00`}</h3>
+          : <h3>R$ --,--</h3>}
       </div>
       <h3 className="my-3 text-lg">Minhas ações</h3>
       <table>
@@ -58,7 +71,7 @@ const WalletComponent = () => {
         <tbody>
           { myStocks && myStocks.map(({ id, name, amount, value }) => (
             <tr key={ id }>
-              <td className="bg-yellow-300 text-black text-center ">{name}</td>
+              <td className="bg-yellow-300 text-black text-center w-16 ">{name}</td>
               <td className="bg-stone-600 text-center">{amount}</td>
               <td className="bg-black text-center">{`R$ ${value},00`}</td>
               <button
@@ -96,7 +109,7 @@ const WalletComponent = () => {
         <tbody>
           { stocksToBy && filteredStocks().map(({ id, name, amount, value }) => (
             <tr key={ id } id={ id }>
-              <td className="bg-yellow-300 text-black text-center ">{name}</td>
+              <td className="bg-yellow-300 text-black text-center w-16">{name}</td>
               <td className="bg-stone-600 text-center">{amount}</td>
               <td className="bg-black text-center">{`R$ ${value},00`}</td>
               <button

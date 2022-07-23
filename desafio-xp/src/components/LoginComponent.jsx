@@ -27,7 +27,7 @@ const LoginComponent = () => {
     <div className="bg-black min-h-screen flex items-center justify-center text-white">
       <section className="bg-zinc-800 max-w-lg rounded-2xl py-14 px-16">
         <div className="bg-white rounded-full w-36 h-20 mx-auto mb-20">
-          <img src={ logo } alt="Logo xp" className="w-54" />
+          <img src={ logo } alt="logo-xp" className="w-54" />
         </div>
         <form>
           <label htmlFor="email" className="font-medium">

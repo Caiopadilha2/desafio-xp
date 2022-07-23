@@ -32,15 +32,15 @@ const SellStockComponent = () => {
       <section className="bg-zinc-800 border-2 rounded-2xl max-w-lg py-16 px-12">
         <h2 className="mb-3 text-lg">Vender ação:</h2>
         <table>
-          <tr>
-            <th>Ação</th>
+          <tr className="bg-zinc-600">
+            <th className="w-16">Ação</th>
             <th>Qtde.</th>
             <th>Valor (R$)</th>
           </tr>
           <tbody>
             { array && array.map(({ id, name, amount, value }) => (
               <tr key={ id }>
-                <td className="bg-yellow-300 text-black text-center">{name}</td>
+                <td className="bg-yellow-300 text-black text-center w-16">{name}</td>
                 <td className="bg-stone-600 text-center">{amount}</td>
                 <td className="bg-black text-center">{`R$ ${value},00`}</td>
               </tr>
