@@ -51,7 +51,7 @@ const WalletComponent = () => {
     <div className="bg-zinc-800 border-2 rounded-2xl max-w-lg py-16 px-12">
       <div>
         <HeaderComponent />
-        <nav className="flex justify-around underline bg-blue-500 font-black border-2">
+        <nav className="flex justify-around underline bg-sky-600 font-black border-2">
           <a
             href="https://blog.xpeducacao.com.br/categoria/como-investir/?gclid=Cj0KCQjwuO6WBhDLARIsAIdeyDL_7R5dGtBXIW7jfJXfwhnMybj19couN9DRLo5lPC2kekEQML1pPwoaAtPwEALw_wcB"
             target="_blank"
@@ -85,10 +85,9 @@ const WalletComponent = () => {
         </button>
         <p className="my-1 text-lg ">
           Saldo em conta:
-          {' '}
           {hideBalance
             ? <p className="my-1 text-lg inline-block">{`R$${Number(balance)},00`}</p>
-            : <h3>R$ --,--</h3>}
+            : <p className="my-1 text-lg inline-block">R$ --,--</p>}
 
         </p>
 
