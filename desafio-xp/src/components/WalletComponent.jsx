@@ -73,17 +73,14 @@ const WalletComponent = () => {
             Logout
           </a>
         </nav>
-        <button
-          type="button"
+        <input
+          type="image"
+          alt="olho"
           onClick={ () => handleHide() }
-        >
-          <img
-            src={ eyeOpen ? olhoAberto : olhoFechado }
-            alt="esconder saldo"
-            className="w-10 mt-3"
-          />
-        </button>
-        <p className="my-1 text-lg ">
+          src={ eyeOpen ? olhoAberto : olhoFechado }
+          className="w-12 mt-4"
+        />
+        <p className=" text-lg ">
           Saldo em conta:
           {hideBalance
             ? <p className="my-1 text-lg inline-block">{`R$${Number(balance)},00`}</p>
@@ -92,7 +89,7 @@ const WalletComponent = () => {
         </p>
 
       </div>
-      <h3 className="my-3 text-lg">Minhas ações</h3>
+      <h3 className="my-3 text-lg bg-zinc-700">Minhas ações</h3>
       <table>
         <thead>
           <tr className="bg-zinc-600">
@@ -129,7 +126,7 @@ const WalletComponent = () => {
 
       </table>
 
-      <h3 className="my-5 text-lg">Disponíveis para investir</h3>
+      <h3 className="my-5 text-lg bg-zinc-700">Disponíveis para investir</h3>
       <FilterNameStock />
       <table>
         <thead>
