@@ -4,6 +4,7 @@ import BalanceContext from '../context/BalanceContext';
 import FilterNameStock from './FilterNameStock';
 import olhoAberto from '../assets/olho_aberto.jpeg';
 import olhoFechado from '../assets/olho_fechado.jpeg';
+import HeaderComponent from './HeaderComponent';
 
 const WalletComponent = () => {
   const history = useHistory();
@@ -40,9 +41,37 @@ const WalletComponent = () => {
     setEyeOpen(!eyeOpen);
   };
 
+  const logout = () => {
+    localStorage.clear();
+    history.push('/');
+  };
+
   return (
     <div className="bg-zinc-800 border-2 rounded-2xl max-w-lg py-16 px-12">
       <div>
+        <HeaderComponent />
+        <nav className="flex justify-around underline bg-blue-500 font-black border-2">
+          <a
+            href="https://blog.xpeducacao.com.br/categoria/como-investir/?gclid=Cj0KCQjwuO6WBhDLARIsAIdeyDL_7R5dGtBXIW7jfJXfwhnMybj19couN9DRLo5lPC2kekEQML1pPwoaAtPwEALw_wcB"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Aprenda a investir!
+          </a>
+          <a
+            href="https://www.gov.br/cvm/pt-br/canais_atendimento/consultas-reclamacoes-denuncias"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Fale com a CVM
+          </a>
+          <a
+            href="/"
+            onClick={ () => logout() }
+          >
+            Logout
+          </a>
+        </nav>
         <button
           type="button"
           onClick={ () => handleHide() }
@@ -50,12 +79,18 @@ const WalletComponent = () => {
           <img
             src={ eyeOpen ? olhoAberto : olhoFechado }
             alt="esconder saldo"
-            className="w-10"
+            className="w-10 mt-3"
           />
         </button>
-        <h3 className="my-1 text-lg">Saldo em conta:</h3>
-        {hideBalance ? <h3 className="my-1 text-lg">{`R$${Number(balance)},00`}</h3>
-          : <h3>R$ --,--</h3>}
+        <p className="my-1 text-lg ">
+          Saldo em conta:
+          {' '}
+          {hideBalance
+            ? <p className="my-1 text-lg inline-block">{`R$${Number(balance)},00`}</p>
+            : <h3>R$ --,--</h3>}
+
+        </p>
+
       </div>
       <h3 className="my-3 text-lg">Minhas ações</h3>
       <table>
@@ -94,7 +129,7 @@ const WalletComponent = () => {
 
       </table>
 
-      <h3 className="my-3 text-lg">Disponíveis para investir</h3>
+      <h3 className="my-5 text-lg">Disponíveis para investir</h3>
       <FilterNameStock />
       <table>
         <thead>
