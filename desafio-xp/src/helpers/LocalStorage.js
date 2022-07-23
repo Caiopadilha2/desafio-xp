@@ -5,3 +5,8 @@ export const saveEmailLocalStorage = (value) => {
 export const saveDateLocalStorage = () => {
   localStorage.setItem('acessDate', new Date());
 };
+
+export const clearUserLocalStorage = () => {
+  localStorage.removeItem('userEmail');
+  localStorage.removeItem('acessDate');
+};

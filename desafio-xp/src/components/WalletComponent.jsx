@@ -5,6 +5,7 @@ import FilterNameStock from './FilterNameStock';
 import olhoAberto from '../assets/olho_aberto.jpeg';
 import olhoFechado from '../assets/olho_fechado.jpeg';
 import HeaderComponent from './HeaderComponent';
+import { clearUserLocalStorage } from '../helpers/LocalStorage';
 
 const WalletComponent = () => {
   const history = useHistory();
@@ -42,7 +43,7 @@ const WalletComponent = () => {
   };
 
   const logout = () => {
-    localStorage.clear();
+    clearUserLocalStorage();
     history.push('/');
   };
 
