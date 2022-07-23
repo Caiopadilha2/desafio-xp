@@ -65,7 +65,7 @@ const BalanceComponent = () => {
   return (
 
     <div className="bg-black min-h-screen flex items-center justify-center text-white">
-      <section className="bg-zinc-800 max-w-lg py-20 px-16">
+      <section className="bg-zinc-800 border-2 rounded-2xl max-w-lg py-20 px-16">
         <div>
           <button
             type="button"

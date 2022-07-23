@@ -4,7 +4,7 @@ import BalanceContext from './BalanceContext';
 import { myStocksData, StocksToByData, allStocksData } from '../data';
 
 function BalanceProvider({ children }) {
-  const INITIAL_BALANCE = '900';
+  const INITIAL_BALANCE = '1000';
   const [balance, setBalance] = useState(INITIAL_BALANCE);
   const [array, setArray] = useState({});
   const [myStocks, setMyStocks] = useState(myStocksData);
