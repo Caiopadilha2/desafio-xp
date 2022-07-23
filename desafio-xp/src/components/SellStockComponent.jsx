@@ -23,7 +23,11 @@ const SellStockComponent = () => {
       'Muito bem!',
       `Sua requisição de venda no valor de R$${offerSale},00 foi enviada! 📈`,
       'success',
-    );
+    ).then((result) => {
+      if (result.isConfirmed) {
+        history.push('/wallet');
+      }
+    });
     // global.alert('Sua requisição de venda foi enviada!');
   };
 

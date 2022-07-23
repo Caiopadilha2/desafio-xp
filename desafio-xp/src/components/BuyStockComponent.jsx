@@ -35,7 +35,11 @@ const BuyStockComponent = () => {
       'Muito bem!',
       `Sua requisição de compra no valor de R$${offerBuy},00 foi enviada! 📈`,
       'success',
-    );
+    ).then((result) => {
+      if (result.isConfirmed) {
+        history.push('/wallet');
+      }
+    });
     // global.alert('Sua requisição de compra foi enviada!');
     setBalance(Number(balance) - Number(offerBuy));
     setOfferBy('');
