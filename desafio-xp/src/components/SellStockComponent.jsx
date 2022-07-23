@@ -21,7 +21,7 @@ const SellStockComponent = () => {
     setOfferSale('');
     MySwal.fire(
       'Muito bem!',
-      `Sua requisição de venda no valor de R$:${offerSale},00 foi enviada! 📈`,
+      `Sua requisição de venda no valor de R$${offerSale},00 foi enviada! 📈`,
       'success',
     );
     // global.alert('Sua requisição de venda foi enviada!');

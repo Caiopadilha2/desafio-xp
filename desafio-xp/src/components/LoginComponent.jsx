@@ -37,7 +37,8 @@ const LoginComponent = () => {
               onChange={ ({ target: { value } }) => setEmail(value) }
               value={ email }
               id="email"
-              className="block w-full rounded text-lg text-zinc-800 p-1 mb-2"
+              placeholder="usario@email.com"
+              className="block w-full rounded text-lg text-zinc-800 p-1 mb-2 text-center"
             />
           </label>
           <label htmlFor="password" className="font-medium">
@@ -47,7 +48,8 @@ const LoginComponent = () => {
               onChange={ ({ target: { value } }) => setPassword(value) }
               value={ password }
               id="password"
-              className="block w-full rounded text-lg text-zinc-800 p-1"
+              placeholder="******"
+              className="block w-full rounded text-lg text-zinc-800 p-1 mb-2 text-center"
             />
           </label>
           <button

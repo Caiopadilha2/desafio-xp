@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
-import FilterName from './FilterName';
+import FilterNameStock from './FilterNameStock';
 
 const WalletComponent = () => {
   const history = useHistory();
@@ -11,7 +11,7 @@ const WalletComponent = () => {
     stocksToBy,
     allStocks,
     setArray,
-    name: filterName,
+    filterName,
   } = useContext(BalanceContext);
   const [hideBalance, setHideBalance] = useState(true);
   // console.log(stocksToBy);
@@ -80,7 +80,7 @@ const WalletComponent = () => {
       </table>
 
       <h3>Disponíveis para investir</h3>
-      <FilterName />
+      <FilterNameStock />
       <table>
         <thead>
           <tr>

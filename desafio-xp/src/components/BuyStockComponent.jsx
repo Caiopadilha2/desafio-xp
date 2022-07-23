@@ -23,7 +23,7 @@ const BuyStockComponent = () => {
       MySwal.fire(
         'Oops... :(',
         `Você não possui saldo para esta requisição de compra. \n
-         Seu saldo é de R$:${balance},00`,
+         Seu saldo é de R$${balance},00`,
         'error',
       );
       // global.alert('Você não possui saldo suficiente para esta oferta de compra.');
@@ -33,7 +33,7 @@ const BuyStockComponent = () => {
     setMyStocks([...myStocks, array[0]]);
     MySwal.fire(
       'Muito bem!',
-      `Sua requisição de compra no valor de R$:${offerBuy},00 foi enviada! 📈`,
+      `Sua requisição de compra no valor de R$${offerBuy},00 foi enviada! 📈`,
       'success',
     );
     // global.alert('Sua requisição de compra foi enviada!');
