@@ -6,7 +6,7 @@ const HeaderComponent = () => {
   const REMOVE_LAST_CHARACTER = -1;
   const email = emailStorage.slice(REMOVE_FIRST_CHARACTER, REMOVE_LAST_CHARACTER);
   return (
-    <div className="bg-stone-600 h-6 flex items-center justify-end mb-4 rounded-lg">
+    <div className="bg-stone-600 h-6 flex items-center justify-center mb-4 rounded-lg">
       <h3>{`Usuário: ${email}`}</h3>
     </div>
   );
