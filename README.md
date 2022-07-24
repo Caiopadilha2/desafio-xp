@@ -91,10 +91,10 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
 
 | Cor               | Hexadecimal                                                |
 | ----------------- | ---------------------------------------------------------------- |
-| Cor exemplo       | ![#27272a](https://via.placeholder.com/10/27272a?text=+) |
-| Cor exemplo       | `#facc15` |
-| Cor exemplo       | `#000000`|
-| Cor exemplo       | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) |
+| Cor exemplo       |`#27272a`|
+| Cor exemplo       |`#facc15`|
+| Cor exemplo       |`#000000`|
+| Cor exemplo       |`#FFFFFF`|
 
 
 ## Referências
