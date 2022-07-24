@@ -84,7 +84,7 @@ const BalanceComponent = () => {
           min="0"
           onChange={ ({ target: { value } }) => setDeposito(value) }
           value={ deposito }
-          className="block w-full rounded text-lg text-zinc-800 p-1 mb-1 mt-3"
+          className="block w-full rounded text-lg text-zinc-800 p-1 mb-1 mt-3 text-center"
         />
         <button
           type="button"

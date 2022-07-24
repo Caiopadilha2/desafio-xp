@@ -38,3 +38,10 @@ test('Botão para depósito/saque aparece na tela.', () => {
   const button = screen.getByRole('button', { name: /depósito/i });
   expect(button).toBeInTheDocument();
 });
+
+test('Botões para comprar aparecem na tela e estão habilitados.', () => {
+  renderWithRouter(<Wallet />);
+  const button = screen.getAllByRole('button', { name: /comprar/i });
+  expect(button).toBeInTheDocument();
+  expect(button).not.toBeDisabled();
+});
