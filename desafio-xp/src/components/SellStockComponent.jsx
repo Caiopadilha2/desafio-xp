@@ -21,14 +21,13 @@ const SellStockComponent = () => {
     setOfferSale('');
     MySwal.fire(
       'Muito bem!',
-      `Sua requisição de venda no valor de R$${offerSale},00 foi enviada! 📈`,
+      `Sua oferta de venda no valor de R$${offerSale},00 foi enviada! 📈`,
       'success',
     ).then((result) => {
       if (result.isConfirmed) {
         history.push('/wallet');
       }
     });
-    // global.alert('Sua requisição de venda foi enviada!');
   };
 
   return (
@@ -74,7 +73,6 @@ const SellStockComponent = () => {
             className="bg-yellow-400 p-2 mt-8 rounded-md text-black text-l font-medium"
           >
             Voltar
-
           </button>
         </div>
       </section>

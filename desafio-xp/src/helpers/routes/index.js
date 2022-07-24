@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import Balance from '../../pages/Balance';
 import BuyStock from '../../pages/BuyStock';
 import Login from '../../pages/Login';
-// import Negociation from '../../pages/Negociation';
 import NotFound from '../../pages/NotFound';
 import SellStock from '../../pages/SellStock';
 import Wallet from '../../pages/Wallet';

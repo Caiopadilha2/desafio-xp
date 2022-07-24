@@ -22,25 +22,23 @@ const BuyStockComponent = () => {
     if (Number(offerBuy) > Number(balance)) {
       MySwal.fire(
         'Oops... :(',
-        `Você não possui saldo para esta requisição de compra. \n
+        `Você não possui saldo para esta oferta de compra. \n
          Seu saldo é de R$${balance},00`,
         'error',
       );
-      // global.alert('Você não possui saldo suficiente para esta oferta de compra.');
       setOfferBy('');
       return setBalance(Number(balance));
     }
     setMyStocks([...myStocks, array[0]]);
     MySwal.fire(
       'Muito bem!',
-      `Sua requisição de compra no valor de R$${offerBuy},00 foi enviada! 📈`,
+      `Sua oferta de compra no valor de R$${offerBuy},00 foi enviada! 📈`,
       'success',
     ).then((result) => {
       if (result.isConfirmed) {
         history.push('/wallet');
       }
     });
-    // global.alert('Sua requisição de compra foi enviada!');
     setBalance(Number(balance) - Number(offerBuy));
     setOfferBy('');
   };
@@ -88,7 +86,6 @@ const BuyStockComponent = () => {
             className="bg-yellow-400 p-2 mt-8 rounded-md text-black text-l font-medium"
           >
             Voltar
-
           </button>
         </div>
       </section>

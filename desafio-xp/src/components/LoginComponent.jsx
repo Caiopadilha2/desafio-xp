@@ -12,12 +12,10 @@ const LoginComponent = () => {
     const MIN_CHARACTERS = 6;
     const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
     const validEmail = emailRegex.test(email);
-    // console.log(validEmail);
     return !(password.length > MIN_CHARACTERS && validEmail);
   };
 
   const onSubmitLogin = () => {
-    // salvar no localstorage e mudar de rota
     saveEmailLocalStorage(email);
     saveDateLocalStorage();
     history.push('/wallet');
@@ -67,7 +65,6 @@ const LoginComponent = () => {
             className="bg-yellow-400 p-2 w-full mt-8 rounded-md text-black text-lg"
           >
             Acessar
-
           </button>
         </form>
       </section>
