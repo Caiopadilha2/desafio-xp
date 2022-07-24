@@ -6,19 +6,15 @@ import BalanceContext from '../context/BalanceContext';
 import onlynumber from '../helpers/onlyNumberInput';
 import olhoAberto from '../assets/olho_aberto.jpeg';
 import olhoFechado from '../assets/olho_fechado.jpeg';
-// import HeaderComponent from './HeaderComponent';
 
 const MySwal = withReactContent(Swal);
 
 const BalanceComponent = () => {
   const history = useHistory();
   const { balance, setBalance } = useContext(BalanceContext);
-  // const [money, setMoney] = useState(balance);
   const [deposito, setDeposito] = useState('');
   const [hideBalance, setHideBalance] = useState(true);
   const [eyeOpen, setEyeOpen] = useState(true);
-  // console.log(balance);
-  // console.log(deposito);
 
   const depositar = () => {
     setBalance(Number(balance) + Number(deposito));
