@@ -3,6 +3,18 @@ import { screen } from '@testing-library/react';
 import renderWithRouter from './renderWithRouter';
 import Wallet from '../components/WalletComponent';
 
+test('Link para aprender a investir está na tela.', () => {
+  renderWithRouter(<Wallet />);
+  const link = screen.getByRole('link', { name: 'Aprenda a investir!' });
+  expect(link).toBeInTheDocument();
+});
+
+test('Link para CVM está na tela.', () => {
+  renderWithRouter(<Wallet />);
+  const link = screen.getByRole('link', { name: 'Fale com a CVM' });
+  expect(link).toBeInTheDocument();
+});
+
 test('Título de minhas ações aparece na tela.', () => {
   renderWithRouter(<Wallet />);
   const heading = screen.getByRole('heading', { name: 'Minhas ações', level: 3 });
@@ -15,14 +27,14 @@ test('Título de ações disponíveis aparece na tela.', () => {
   expect(heading).toBeInTheDocument();
 });
 
+test('Input de filtro aparece na tela.', () => {
+  renderWithRouter(<Wallet />);
+  const input = screen.getByPlaceholderText('Busque uma ação');
+  expect(input).toBeInTheDocument();
+});
+
 test('Botão para depósito/saque aparece na tela.', () => {
   renderWithRouter(<Wallet />);
   const button = screen.getByRole('button', { name: /depósito/i });
-  expect(button).toBeInTheDocument();
-});
-
-test('Botão para depósito/saque redireciona para balance.', async () => {
-  renderWithRouter(<Wallet />);
-  const button = screen.getByRole('button', { name: /Depósito/i });
   expect(button).toBeInTheDocument();
 });
