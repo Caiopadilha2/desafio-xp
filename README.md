@@ -74,7 +74,7 @@ Utilizei diversas ferramentas/bibliotecas para o desenvolvimento deste aplicativ
 Ainda me aproveitando do React, utilizei sua ferramenta de testes, a React Testing Library, RTL, para escrever os testes da minha aplicação.
 
 Sobre a parte visual/gráfica, optei por utilizar o Tailwind CSS por ter recomendação de professores durante as aulas em que comentaram sobre o aprendizado que eles tiveram sobre o CSS a partir da dinâmica de como o Tailwind funciona. Também, como tenho vários componentes, eu possivelmente teria problemas em colocar diversos nomes de classes para eles, enquanto no Tailwind isso não é necessário, pois fazemos direto inline.
-Outra biblioteca que utilizei na parte gráfica foi a SweetAlert2, que disponibiliza diversos tipor de alertas personalizados. Com ela, pude utilizar casos de sucesso ou falha para minhas operações financeiras.
+Outra biblioteca que utilizei na parte gráfica foi a SweetAlert2, que disponibiliza diversos tipos de alertas personalizados. Com ela, pude utilizar casos de sucesso ou falha para minhas operações financeiras.
 
 Sobre guardar os dados, os estados são salvos com o context, utilizando o context/provider, e as informações do usuário, como login e data de acesso, ficam salvas no LocalStorage. Isso porque essa informação é interessante tê-la em todas as páginas que o usuário navegar, e eu posso apagá-la quando a pessoa usuária fizer Logout.
 
@@ -92,8 +92,8 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
 | Cor               | Hexadecimal                                                |
 | ----------------- | ---------------------------------------------------------------- |
 | Cor exemplo       | ![#27272a](https://via.placeholder.com/10/27272a?text=+) |
-| Cor exemplo       | ![#facc15](https://via.placeholder.com/10/facc15?text=+) |
-| Cor exemplo       | ![#000000](https://via.placeholder.com/10/000000?text=+) |
+| Cor exemplo       | `#facc15` |
+| Cor exemplo       | `#000000`|
 | Cor exemplo       | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) |
 
 
@@ -118,43 +118,45 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
  - [Abra uma conta na XP investimentos](https://cadastro.xpi.com.br/desktop/step/1?assessor=A69103)
  - [Aprenda a investir com a XP investimentos](https://blog.xpeducacao.com.br/categoria/como-investir/?gclid=Cj0KCQjwuO6WBhDLARIsAIdeyDL_7R5dGtBXIW7jfJXfwhnMybj19couN9DRLo5lPC2kekEQML1pPwoaAtPwEALw_wcB)
  - [Trocar o Favicon](https://www.youtube.com/watch?v=7pJmM-XdPm8&ab_channel=ProgrammerError)
+ - [Sobre a CVM](https://jusdecisum.com.br/cvm-anuncia-instituicao-do-servico-de-ouvidoria/)
+ - [Trocar o Favicon](https://www.youtube.com/watch?v=7pJmM-XdPm8&ab_channel=ProgrammerError)
  
  
 ## Aspectos legais
 
- Este aplicativo conta com acesso ao canal da ouvidoria da CVM (Comissão de Valores Mobiliários), orgão da Administração direta, uma autarquia vinculada ao Ministério da Economia que tem, dentre suas principais funções, disciplinar, normalizar e fiscalizar a atuação dos diversos integrantes do mercado. **Uma das suas responsabilidades é a de disciplinar sobre a Negociação e Intermediação no mercado de valores mobiliários.**
+Este aplicativo conta com acesso ao canal da ouvidoria da CVM (Comissão de Valores Mobiliários), orgão da Administração direta, uma autarquia vinculada ao Ministério da Economia que tem, dentre suas principais funções, disciplinar, normalizar e fiscalizar a atuação dos diversos integrantes do mercado. **Uma das suas responsabilidades é a de disciplinar sobre a Negociação e Intermediação no mercado de valores mobiliários.**
  
- De acordo com a RESOLUÇÃO CVM Nº 43, DE 17 DE AGOSTO DE 2021, que dispõe sobre a instituição da Ouvidoria no âmbito do mercado de valores mobiliários e revoga a Instrução CVM nº 529, de 1º de novembro de 2012.
+*De acordo com a RESOLUÇÃO CVM Nº 43, DE 17 DE AGOSTO DE 2021, que dispõe sobre a instituição da Ouvidoria no âmbito do mercado de valores mobiliários e revoga a Instrução CVM nº 529, de 1º de novembro de 2012.*
  
- CAPÍTULO I – ÂMBITO E FINALIDADE
+ *CAPÍTULO I – ÂMBITO E FINALIDADE*
  
- Art. 2º **Devem instituir Ouvidoria**:
+ *Art. 2º **Devem instituir Ouvidoria**:*
 
-I – as instituições habilitadas a atuar como integrante do sistema de distribuição;
+*I – as instituições habilitadas a atuar como integrante do sistema de distribuição;*
 
-II – os prestadores de serviços de custódia de valores mobiliários;
+*II – os prestadores de serviços de custódia de valores mobiliários;*
 
-III – os agentes emissores de certificados; e
+*III – os agentes emissores de certificados; e*
 
-IV – os prestadores de serviços de ações escriturais.
+*IV – os prestadores de serviços de ações escriturais.*
 
-§ 1º O disposto no caput não se aplica:
+*§ 1º O disposto no caput não se aplica:*
 
-I – às entidades administradoras de mercados organizados; e
+*I – às entidades administradoras de mercados organizados; e*
 
-II – às entidades de compensação e liquidação.
+*II – às entidades de compensação e liquidação.*
 
-§ 2º As Ouvidorias das instituições de que trata o inciso I do caput devem atender às demandas relacionadas aos agentes autônomos de investimento contratados por tais instituições.
+*§ 2º As Ouvidorias das instituições de que trata o inciso I do caput devem atender às demandas relacionadas aos agentes autônomos de investimento contratados por tais instituições.*
 
-§ 3º As instituições a que se referem os incisos I ao IV do caput devem dar ampla divulgação sobre a existência da Ouvidoria e seus canais de atendimento, bem como fornecer informações completas acerca da sua finalidade e forma de utilização.
+*§ 3º As instituições a que se referem os incisos I ao IV do caput devem dar ampla divulgação sobre a existência da Ouvidoria e seus canais de atendimento, bem como fornecer informações completas acerca da sua finalidade e forma de utilização.*
 
-§ 4º A divulgação acerca da existência da Ouvidoria e seus canais de atendimento de que trata o § 3º deve se dar:
+*§ 4º A divulgação acerca da existência da Ouvidoria e seus canais de atendimento de que trata o § 3º deve se dar:*
 
-I – em local e formato visível ao público nas dependências das instituições;
+*I – em local e formato visível ao público nas dependências das instituições;*
 
 **II – nos respectivos endereços eletrônicos na rede mundial de computadores;** e
 
-III – nos extratos, comprovantes, inclusive eletrônicos, contratos formalizados com os clientes, materiais de propaganda e de publicidade e demais documentos que se destinem aos clientes e usuários dos produtos e serviços da instituição.
+*III – nos extratos, comprovantes, inclusive eletrônicos, contratos formalizados com os clientes, materiais de propaganda e de publicidade e demais documentos que se destinem aos clientes e usuários dos produtos e serviços da instituição.*
  
  Dito isso, esse aplicativo busca seguir as normais legais oferecendo acesso à ouvidoria da CVM aos seus usuários. 
  
