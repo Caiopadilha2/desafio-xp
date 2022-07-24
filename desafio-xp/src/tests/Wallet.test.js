@@ -37,6 +37,7 @@ test('Botão para depósito/saque aparece na tela.', () => {
   renderWithRouter(<Wallet />);
   const button = screen.getByRole('button', { name: /depósito/i });
   expect(button).toBeInTheDocument();
+  expect(button).not.toBeDisabled();
 });
 
 test('Botões para comprar aparecem na tela e estão habilitados.', () => {
