@@ -109,6 +109,7 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
  - [Redirecionar para outra aba](https://www.freecodecamp.org/portuguese/news/como-usar-o-html-para-abrir-um-link-em-uma-nova-aba/)
  - [Abra uma conta na XP investimentos](https://cadastro.xpi.com.br/desktop/step/1?assessor=A69103)
  - [Aprenda a investir com a XP investimentos](https://blog.xpeducacao.com.br/categoria/como-investir/?gclid=Cj0KCQjwuO6WBhDLARIsAIdeyDL_7R5dGtBXIW7jfJXfwhnMybj19couN9DRLo5lPC2kekEQML1pPwoaAtPwEALw_wcB)
+ - [Trocar o Favicon](https://www.youtube.com/watch?v=7pJmM-XdPm8&ab_channel=ProgrammerError)
  
  
 ## Melhorias futuras
