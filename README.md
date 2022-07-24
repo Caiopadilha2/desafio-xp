@@ -76,15 +76,15 @@ Para rodar os testes, faça o seguinte comando:
 
 ## Decisões de desenvolvimento
 
-Utilizei diversas ferramentas/bibliotecas para o desenvolvimento deste aplicativo e irei detalhar ao máximo o porquê. Inicialmente, escolhi por utilizar a biblioteca React por ser a plataforma que trabalha com a componentes, os quais são utilizados para reaproveitamento de código e padronização de interface. Além disso, utilizando o Context, vi como sendo a melhor maneira de manipular os estados que eu precisaria para a aplicação.
-Ainda me aproveitando do React, utilizei sua ferramenta de testes, a React Testing Library, RTL, para escrever os testes da minha aplicação.
+Utilizei diversas ferramentas/bibliotecas para o desenvolvimento deste aplicativo e irei detalhar ao máximo o porquê. Inicialmente, escolhi por utilizar a biblioteca React por ser uma plataforma que trabalha com componentes, os quais são utilizados para reaproveitamento de código e padronização de interface. Além disso, utilizando o Context, o vi como sendo a melhor opção para manipular os estados que eu precisaria para a aplicação.
+Ainda me aproveitando do React, utilizei sua ferramenta de testes, a React Testing Library (RTL), para escrever os testes da minha aplicação.
 
 Sobre a parte visual/gráfica, optei por utilizar o Tailwind CSS por ter recomendação de professores durante as aulas em que comentaram sobre o aprendizado que eles tiveram sobre o CSS a partir da dinâmica de como o Tailwind funciona. Também, como tenho vários componentes, eu possivelmente teria problemas em colocar diversos nomes de classes para eles, enquanto no Tailwind isso não é necessário, pois fazemos direto inline.
 Outra biblioteca que utilizei na parte gráfica foi a SweetAlert2, que disponibiliza diversos tipos de alertas personalizados. Com ela, pude utilizar casos de sucesso ou falha para minhas operações financeiras.
 
-Sobre guardar os dados, os estados são salvos com o context, utilizando o context/provider, e as informações do usuário, como login e data de acesso, ficam salvas no LocalStorage. Isso porque essa informação é interessante tê-la em todas as páginas que o usuário navegar, e eu posso apagá-la quando a pessoa usuária fizer Logout.
+Sobre guardar os dados, os estados são salvos com o context, utilizando o context/provider, e as informações do usuário - como login e data de acesso - ficam salvas no LocalStorage. Isso porque essa informação é interessante tê-la **em todas as páginas em que o usuário navegar**, e eu posso apagá-la quando a pessoa usuária fizer Logout.
 
-Já sobre detalhes mais abstratos, tive que adotar algumas premissas sobre as compras/vendas das ações. Diante da dinâmica do mercado financeiro, adotei a premissa que **todas as ordens de compra e venda foram aprovadas**, tendo com isso o saldo atualizado de acordo com o valor dessas ordens feitas pelo usuário.
+Já sobre detalhes mais abstratos, tive que adotar algumas **premissas** sobre as compras/vendas das ações. Diante da dinâmica do mercado financeiro, adotei a premissa que **todas as ordens de compra e venda foram executadas**, tendo com isso o saldo atualizado de acordo com o valor dessas ordens feitas pelo usuário.
 
 
 
