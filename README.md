@@ -87,12 +87,6 @@ Sobre guardar os dados, os estados são salvos com o context, utilizando o conte
 Já sobre detalhes mais abstratos, tive que adotar algumas **premissas** sobre as compras/vendas das ações. Diante da dinâmica do mercado financeiro, adotei a premissa que **todas as ordens de compra e venda foram executadas**, tendo com isso o saldo atualizado de acordo com o valor dessas ordens feitas pelo usuário.
 
 
-
-## Aprendizados
-
-O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e como você os superou?
-
-
  ## Documentação de cores
 
 | Cor               | Hexadecimal                                                |
