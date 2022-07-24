@@ -9,13 +9,14 @@ Projeto desenvolvido para o processo seletivo da XP.
 Clone o projeto
 
 ```bash
-  git clone https://link-para-o-projeto
+  git clone git@github.com:Caiopadilha2/desafio-xp.git
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd my-project
+  cd desafio-xp
+  cd desafio-xp
 ```
 
 Instale as dependências
