@@ -42,7 +42,7 @@ Para rodar os testes, rode o seguinte comando
 
 ## Ferramentas
 
-| Plugin | Documentação |
+| Bibliotecas | Documentação |
 | ------ | ------ |
 | React | https://pt-br.reactjs.org/ |
 | PropTypes| https://www.npmjs.com/package/prop-types |
