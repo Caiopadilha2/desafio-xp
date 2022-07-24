@@ -5,7 +5,6 @@ import FilterNameStock from './FilterNameStock';
 import olhoAberto from '../assets/olho_aberto.jpeg';
 import olhoFechado from '../assets/olho_fechado.jpeg';
 import HeaderComponent from './HeaderComponent';
-import { clearUserLocalStorage } from '../helpers/LocalStorage';
 import NavBar from './NavBar';
 
 const WalletComponent = () => {
