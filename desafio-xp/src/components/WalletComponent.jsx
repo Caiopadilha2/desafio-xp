@@ -83,16 +83,16 @@ const WalletComponent = () => {
               <button
                 type="button"
                 onClick={ () => selecionarAçãoCompra(id) }
-                className="bg-blue-700 w-10"
+                className="bg-blue-700 w-20"
               >
-                Buy
+                Comprar
               </button>
               <button
                 type="button"
                 onClick={ () => selecionarAçãoVenda(id) }
-                className="bg-green-700 w-10"
+                className="bg-green-700 w-20"
               >
-                Sale
+                Vender
               </button>
             </tr>
           ))}
@@ -121,16 +121,16 @@ const WalletComponent = () => {
               <button
                 type="button"
                 onClick={ () => selecionarAçãoCompra(id) }
-                className="bg-blue-700 w-10"
+                className="bg-blue-700 w-20"
               >
-                Buy
+                Comprar
               </button>
               <button
                 type="button"
                 disabled
-                className="bg-zinc-400 w-10"
+                className="bg-zinc-400 w-20"
               >
-                Sale
+                Vender
               </button>
               {/* Todas as ações do array de "ações para comprar" vêm com botão de venda desabilitado. */}
             </tr>
