@@ -6,13 +6,13 @@ import Login from '../components/LoginComponent';
 
 test('Input de email está na tela.', () => {
   renderWithRouter(<Login />);
-  const input = screen.getByPlaceholderText('Email:');
+  const input = screen.getByPlaceholderText('usario@email.com');
   expect(input).toBeInTheDocument();
 });
 
 test('Input de senha está na tela.', () => {
   renderWithRouter(<Login />);
-  const input = screen.getByPlaceholderText('Password');
+  const input = screen.getByPlaceholderText('******');
   expect(input).toBeInTheDocument();
 });
 

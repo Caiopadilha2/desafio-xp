@@ -4,13 +4,13 @@ import BalanceContext from './BalanceContext';
 import { myStocksData, StocksToByData, allStocksData } from '../data';
 
 function BalanceProvider({ children }) {
-  const INITIAL_BALANCE = '900';
+  const INITIAL_BALANCE = '1000';
   const [balance, setBalance] = useState(INITIAL_BALANCE);
   const [array, setArray] = useState({});
   const [myStocks, setMyStocks] = useState(myStocksData);
   const [stocksToBy, setStocksToBy] = useState(StocksToByData);
   const [allStocks, setAllStocks] = useState(allStocksData);
-  const [name, setName] = useState('');
+  const [filterName, setFilterName] = useState('');
 
   const contextValue = {
     balance,
@@ -23,8 +23,8 @@ function BalanceProvider({ children }) {
     setStocksToBy,
     allStocks,
     setAllStocks,
-    name,
-    setName,
+    filterName,
+    setFilterName,
   };
 
   return (

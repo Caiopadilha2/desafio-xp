@@ -1,7 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BalanceContext from '../context/BalanceContext';
-import FilterName from './FilterName';
+import FilterNameStock from './FilterNameStock';
+import olhoAberto from '../assets/olho_aberto.jpeg';
+import olhoFechado from '../assets/olho_fechado.jpeg';
+import HeaderComponent from './HeaderComponent';
+import { clearUserLocalStorage } from '../helpers/LocalStorage';
+import NavBar from './NavBar';
 
 const WalletComponent = () => {
   const history = useHistory();
@@ -11,10 +16,10 @@ const WalletComponent = () => {
     stocksToBy,
     allStocks,
     setArray,
-    name: filterName,
+    filterName,
   } = useContext(BalanceContext);
   const [hideBalance, setHideBalance] = useState(true);
-  // console.log(stocksToBy);
+  const [eyeOpen, setEyeOpen] = useState(true);
 
   const selecionarAçãoCompra = (IdAcaoClicada) => {
     const todasAsacoes = allStocks;
@@ -33,21 +38,36 @@ const WalletComponent = () => {
   const filteredStocks = () => stocksToBy.filter(({ name }) => name.toLowerCase()
     .includes(filterName.toLowerCase()));
 
+  const handleHide = () => {
+    setHideBalance(!hideBalance);
+    setEyeOpen(!eyeOpen);
+  };
+
   return (
-    <div>
+    <div className="bg-zinc-800 border-2 rounded-2xl max-w-lg py-16 px-12">
       <div>
-        <button
-          type="button"
-          onClick={ () => setHideBalance(!hideBalance) }
-        >
-          { hideBalance ? 'Esconder saldo' : 'Mostrar saldo'}
-        </button>
-        {hideBalance && <h3>{`Saldo em conta: R$${Number(balance)},00`}</h3>}
+        <HeaderComponent />
+        <NavBar />
+        <input
+          type="image"
+          alt="olho"
+          onClick={ () => handleHide() }
+          src={ eyeOpen ? olhoAberto : olhoFechado }
+          className="w-12 mt-4"
+        />
+        <p className=" text-lg ">
+          Saldo em conta:
+          {hideBalance
+            ? <p className="my-1 text-lg inline-block">{`R$${Number(balance)},00`}</p>
+            : <p className="my-1 text-lg inline-block">R$ --,--</p>}
+
+        </p>
+
       </div>
-      <h3>Minhas ações</h3>
+      <h3 className="my-3 text-lg bg-zinc-700">Minhas ações</h3>
       <table>
         <thead>
-          <tr>
+          <tr className="bg-zinc-600">
             <th>Ação</th>
             <th>Qtde.</th>
             <th>Valor (R$)</th>
@@ -58,18 +78,20 @@ const WalletComponent = () => {
         <tbody>
           { myStocks && myStocks.map(({ id, name, amount, value }) => (
             <tr key={ id }>
-              <td>{name}</td>
-              <td>{amount}</td>
-              <td>{`R$ ${value},00`}</td>
+              <td className="bg-yellow-300 text-black text-center w-16 ">{name}</td>
+              <td className="bg-stone-600 text-center">{amount}</td>
+              <td className="bg-black text-center">{`R$ ${value},00`}</td>
               <button
                 type="button"
                 onClick={ () => selecionarAçãoCompra(id) }
+                className="bg-blue-700 w-10"
               >
                 Buy
               </button>
               <button
                 type="button"
                 onClick={ () => selecionarAçãoVenda(id) }
+                className="bg-green-700 w-10"
               >
                 Sale
               </button>
@@ -79,11 +101,11 @@ const WalletComponent = () => {
 
       </table>
 
-      <h3>Disponíveis para investir</h3>
-      <FilterName />
+      <h3 className="my-5 text-lg bg-zinc-700">Disponíveis para investir</h3>
+      <FilterNameStock />
       <table>
         <thead>
-          <tr>
+          <tr className="bg-zinc-600">
             <th>Ação</th>
             <th>Qtde.</th>
             <th>Valor (R$)</th>
@@ -94,16 +116,23 @@ const WalletComponent = () => {
         <tbody>
           { stocksToBy && filteredStocks().map(({ id, name, amount, value }) => (
             <tr key={ id } id={ id }>
-              <td>{name}</td>
-              <td>{amount}</td>
-              <td>{`R$ ${value},00`}</td>
+              <td className="bg-yellow-300 text-black text-center w-16">{name}</td>
+              <td className="bg-stone-600 text-center">{amount}</td>
+              <td className="bg-black text-center">{`R$ ${value},00`}</td>
               <button
                 type="button"
                 onClick={ () => selecionarAçãoCompra(id) }
+                className="bg-blue-700 w-10"
               >
                 Buy
               </button>
-              <button type="button" disabled>Sale</button>
+              <button
+                type="button"
+                disabled
+                className="bg-zinc-400 w-10"
+              >
+                Sale
+              </button>
               {/* Todas as ações do array de "ações para comprar" vêm com botão de venda desabilitado. */}
             </tr>
           ))}
@@ -113,6 +142,7 @@ const WalletComponent = () => {
       <button
         type="button"
         onClick={ () => history.push('/balance') }
+        className="bg-yellow-400 p-2 mt-8 rounded-md text-black text-l font-medium"
       >
         Depósito / Saque
 
