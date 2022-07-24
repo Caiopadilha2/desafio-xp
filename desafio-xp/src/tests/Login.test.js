@@ -1,8 +1,13 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
 import renderWithRouter from './renderWithRouter';
 import Login from '../components/LoginComponent';
+
+test('A logo está na tela.', () => {
+  renderWithRouter(<Login />);
+  const img = screen.getByRole('img', { name: 'logo-xp' });
+  expect(img).toBeInTheDocument();
+});
 
 test('Input de email está na tela.', () => {
   renderWithRouter(<Login />);
@@ -16,24 +21,15 @@ test('Input de senha está na tela.', () => {
   expect(input).toBeInTheDocument();
 });
 
+test('Link para abrir sua conta está na tela.', () => {
+  renderWithRouter(<Login />);
+  const link = screen.getByRole('link', { name: 'Abra sua conta' });
+  expect(link).toBeInTheDocument();
+});
+
 test('Botão está na tela.', () => {
   renderWithRouter(<Login />);
   const button = screen.getByRole('button', { name: 'Acessar' });
   expect(button).toBeInTheDocument();
   expect(button).toBeDisabled();
 });
-
-// test('Botão de acessar redireciona para página Wallet.', () => {
-//   renderWithRouter(<Login />);
-//   const button = screen.getByRole('button', { name: 'Acessar' });
-//   expect(button).toBeInTheDocument();
-//   const inputEmail = screen.getByPlaceholderText('Email:');
-//   expect(inputEmail).toBeInTheDocument();
-//   const inputPassword = screen.getByPlaceholderText('Password');
-//   expect(inputPassword).toBeInTheDocument();
-//   userEvent.type(inputEmail, 'caiopadilha@teste.com');
-//   userEvent.type(inputPassword, '123456');
-//   userEvent.click(button);
-//   const heading = screen.getByText(/minhas ações/);
-//   expect(heading).toBeInTheDocument();
-// });
